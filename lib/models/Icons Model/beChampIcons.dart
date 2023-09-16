@@ -14,11 +14,11 @@ class BeChampIcon extends StatelessWidget {
     return isActive as bool
         ? Image.asset(
             "$active",
-            width: 50,
+            width: active == "assets/homeActive.png" ? 20 : 30,
           )
         : Image.asset(
             "$unActive",
-            width: 50,
+            width: unActive == "assets/home.png" ? 20 : 30,
           );
   }
 }

@@ -40,7 +40,7 @@ class Dashboard extends StatelessWidget {
                   child: PageView(
                     controller:
                         PageController(viewportFraction: 0.6, initialPage: 1),
-                    children: [
+                    children: const [
                       SectionTile(
                         imagePath: "assets/home2.png",
                         title: "Nutrition Plan",

@@ -27,8 +27,8 @@ class _HomeState extends State<Home> {
             selectedItemColor: Theme.of(context).primaryColor,
             backgroundColor: Colors.grey[800],
             snakeShape: SnakeShape.indicator,
-            snakeViewColor: Theme.of(context).primaryColor,
-            padding: const EdgeInsets.all(40),
+            snakeViewColor: Color.fromRGBO(112, 255, 4, 1),
+            padding: const EdgeInsets.all(20),
             behaviour: SnakeBarBehaviour.floating,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(25))),
@@ -58,7 +58,16 @@ class _HomeState extends State<Home> {
                       isActive: currentIndex == 2 ? true : false),
                   label: 'Nutrition'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings), label: 'Settings'),
+                  icon: currentIndex == 3
+                      ? Icon(
+                          Icons.settings,
+                          color: Color.fromRGBO(112, 255, 4, 1),
+                        )
+                      : Icon(
+                          Icons.settings,
+                          color: Colors.grey.shade600,
+                        ),
+                  label: 'Settings'),
             ]));
   }
 }

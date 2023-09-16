@@ -22,7 +22,11 @@ class AddingGoals extends StatelessWidget {
           ),
           Text("Your answer will help us to create your personalized plan\n",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 17, color: Colors.white)),
+              style: TextStyle(
+                fontSize: 17,
+                color: Colors.white,
+                fontFamily: "bechampFont",
+              )),
           SizedBox(
             height: MediaQuery.of(context).size.height / 2.1,
             child: VerticalPicker(

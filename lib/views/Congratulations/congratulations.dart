@@ -37,6 +37,7 @@ class Congratulations extends StatelessWidget {
                   Text(
                     "Congratulations !\n",
                     style: TextStyle(
+                        fontFamily: "bechampBold",
                         color: Theme.of(context).primaryColor,
                         fontSize: 40,
                         fontWeight: FontWeight.bold),
@@ -44,7 +45,11 @@ class Congratulations extends StatelessWidget {
                   Text(
                     "You can enjoy your app now",
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white, fontSize: 17),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontFamily: "bechampFont",
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 12,

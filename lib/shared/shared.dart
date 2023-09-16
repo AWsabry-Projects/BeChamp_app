@@ -5,21 +5,27 @@ bool isEnglish = true; // App Language
 bool isSubscribed = false; // condition to know if user has paid or not
 
 ThemeData theme = ThemeData(
+    fontFamily: "bechampFont",
     primaryColor: Color.fromRGBO(206, 255, 0, 1), //app main color
     scaffoldBackgroundColor: Colors.grey[900],
     shadowColor: Color.fromARGB(255, 75, 192, 64),
     textTheme: TextTheme(
         displayMedium: TextStyle(
+            fontFamily: "bechampBold",
             color: Colors.white,
             fontSize: 34,
             fontWeight: FontWeight.bold), //for vertical Slider
         displaySmall: TextStyle(
-            fontSize: 20, color: Colors.white), //and normal text paragraphs
+            fontFamily: "bechampFont",
+            fontSize: 20,
+            color: Colors.white), //and normal text paragraphs
         titleLarge: TextStyle(
+            fontFamily: "bechampBold",
             color: Colors.black,
             fontSize: 25,
             fontWeight: FontWeight.bold), //button text
         displayLarge: TextStyle(
+            fontFamily: "bechampBold",
             color: Colors.white,
             fontSize: 45,
             fontWeight: FontWeight.bold) //Any titles or headers texts

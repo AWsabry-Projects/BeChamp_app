@@ -54,6 +54,7 @@ class Boarding extends StatelessWidget {
                       Text(
                         "Welcome to Fitness App\n",
                         style: TextStyle(
+                            fontFamily: "bechampBold",
                             color: Colors.white,
                             fontSize: 30,
                             fontWeight: FontWeight.bold),
@@ -61,7 +62,11 @@ class Boarding extends StatelessWidget {
                       Text(
                         "jdfhuid efeuyeui reiuryeuiryue wuyeow qioquo",
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.grey, fontSize: 18),
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                          fontFamily: "bechampFont",
+                        ),
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height / 12,
@@ -119,6 +124,7 @@ class Boarding extends StatelessWidget {
                       Text(
                         "Customized Workouts\n",
                         style: TextStyle(
+                            fontFamily: "bechampBold",
                             color: Colors.white,
                             fontSize: 30,
                             fontWeight: FontWeight.bold),
@@ -126,7 +132,11 @@ class Boarding extends StatelessWidget {
                       Text(
                         "jdfhuid efeuyeui reiuryeuiryue wuyeow qioquo",
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.grey, fontSize: 18),
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                          fontFamily: "bechampFont",
+                        ),
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height / 12,
@@ -184,6 +194,7 @@ class Boarding extends StatelessWidget {
                       Text(
                         "Customized Nutrition Plan\n",
                         style: TextStyle(
+                            fontFamily: "bechampBold",
                             color: Colors.white,
                             fontSize: 30,
                             fontWeight: FontWeight.bold),
@@ -191,7 +202,11 @@ class Boarding extends StatelessWidget {
                       Text(
                         "jdfhuid efeuyeui reiuryeuiryue wuyeow qioquo",
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.grey, fontSize: 18),
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                          fontFamily: "bechampFont",
+                        ),
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height / 12,
