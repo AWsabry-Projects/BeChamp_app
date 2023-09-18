@@ -9,17 +9,7 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_circle_left_sharp,
-              color: Colors.white,
-              size: 30,
-            )),
-      ),
+      appBar: BeChampAppBar(context).build(context),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [

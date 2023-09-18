@@ -1,5 +1,6 @@
 import 'package:bechamp/models/WeeksOrDays/weekOrDay.dart';
 import 'package:bechamp/shared/shared.dart';
+import 'package:bechamp/views/Workouts/Workouts%20Days%20Screen%202/workoutsDaysScreen.dart';
 import 'package:flutter/material.dart';
 
 class WeeksScreen extends StatelessWidget {
@@ -30,24 +31,52 @@ class WeeksScreen extends StatelessWidget {
                 image: "assets/week1.png",
                 title: "Week 1",
                 description: "dgfyefue oeiry eiruy kj",
+                onTap: () {
+                  goTo(
+                      context,
+                      const WorkoutsDays(
+                        week: 1,
+                      ));
+                },
               ),
               WeekOrDayTile(
                 isWeek: true,
                 image: "assets/week2.png",
                 title: "Week 2",
                 description: "dgfyefue oeiry eiruy kj",
+                onTap: () {
+                  goTo(
+                      context,
+                      const WorkoutsDays(
+                        week: 2,
+                      ));
+                },
               ),
               WeekOrDayTile(
                 isWeek: true,
                 image: "assets/week3.png",
                 title: "Week 3",
                 description: "dgfyefue oeiry eiruy kj",
+                onTap: () {
+                  goTo(
+                      context,
+                      const WorkoutsDays(
+                        week: 3,
+                      ));
+                },
               ),
               WeekOrDayTile(
                 isWeek: true,
                 image: "assets/week4.png",
                 title: "Week 4",
                 description: "dgfyefue oeiry eiruy kj",
+                onTap: () {
+                  goTo(
+                      context,
+                      const WorkoutsDays(
+                        week: 4,
+                      ));
+                },
               )
             ],
           ),

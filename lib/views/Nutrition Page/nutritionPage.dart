@@ -28,21 +28,25 @@ class NutritionScreen extends StatelessWidget {
               image: "assets/day1.png",
               title: "Day 1",
               isWeek: false,
+              onTap: () {},
             ),
             WeekOrDayTile(
               image: "assets/day2.png",
               title: "Day 2",
               isWeek: false,
+              onTap: () {},
             ),
             WeekOrDayTile(
               image: "assets/day3.png",
               title: "Day 3",
               isWeek: false,
+              onTap: () {},
             ),
             WeekOrDayTile(
               image: "assets/day4.png",
               title: "Day 4",
               isWeek: false,
+              onTap: () {},
             ),
             SizedBox(
               height: 55,

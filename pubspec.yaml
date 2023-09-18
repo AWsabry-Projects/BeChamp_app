@@ -34,6 +34,7 @@ dependencies:
   vertical_picker: ^0.0.1
   flutter_snake_navigationbar: ^0.6.1
   page_indicator: ^0.4.1
+  circular_countdown_timer: ^0.2.3
   flutter:
     sdk: flutter
 

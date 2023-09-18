@@ -15,6 +15,7 @@ ThemeData theme = ThemeData(
             color: Colors.white,
             fontSize: 34,
             fontWeight: FontWeight.bold), //for vertical Slider
+
         displaySmall: TextStyle(
             fontFamily: "bechampFont",
             fontSize: 20,
@@ -62,6 +63,24 @@ class Loading extends StatelessWidget {
     return Image.asset(
       "assets/loading.png",
       fit: BoxFit.cover,
+    );
+  }
+}
+
+class BeChampAppBar extends AppBar {
+  BeChampAppBar(BuildContext context) : super();
+
+  PreferredSizeWidget build(BuildContext context) {
+    return AppBar(
+      leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_circle_left_rounded,
+            color: Colors.white,
+            size: 30,
+          )),
     );
   }
 }
