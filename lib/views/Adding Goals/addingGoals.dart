@@ -10,7 +10,7 @@ class AddingGoals extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: BeChampAppBar(context).build(context),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child:

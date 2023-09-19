@@ -38,6 +38,7 @@ class WeeksScreen extends StatelessWidget {
                         week: 1,
                       ));
                 },
+                isCompleted: true,
               ),
               WeekOrDayTile(
                 isWeek: true,
@@ -51,6 +52,7 @@ class WeeksScreen extends StatelessWidget {
                         week: 2,
                       ));
                 },
+                isCompleted: false,
               ),
               WeekOrDayTile(
                 isWeek: true,
@@ -64,6 +66,7 @@ class WeeksScreen extends StatelessWidget {
                         week: 3,
                       ));
                 },
+                isCompleted: false,
               ),
               WeekOrDayTile(
                 isWeek: true,
@@ -77,6 +80,7 @@ class WeeksScreen extends StatelessWidget {
                         week: 4,
                       ));
                 },
+                isCompleted: false,
               )
             ],
           ),

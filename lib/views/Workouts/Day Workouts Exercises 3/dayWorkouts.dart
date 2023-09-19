@@ -125,8 +125,10 @@ class DayWorkouts extends StatelessWidget {
                           goTo(
                               context,
                               Exercise(
-                                  gifLink: "d",
-                                  exerciseNameOrMuscle: "bicep",
+                                  muscleName: "bicep",
+                                  gifLink:
+                                      "https://media.tenor.com/aqN6k1GYfVYAAAAM/f-orever-online.gif",
+                                  exerciseName: "jumping rope",
                                   reps: 15,
                                   sets: 3,
                                   day: day,
