@@ -12,10 +12,11 @@ class Congratulations extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           SizedBox(
+            width: double.maxFinite,
             height: double.maxFinite,
             child: Image.asset(
               "assets/congratulations.png",
-              fit: BoxFit.fitHeight,
+              fit: BoxFit.cover,
             ),
           ),
           Container(

@@ -8,86 +8,89 @@ class WeeksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.all(35.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Directionality(
+      textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.all(35.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Hello,\n$userName",
+                    style: Theme.of(context).textTheme.displaySmall,
+                  ),
+                  CircleAvatar()
+                ],
+              ),
+            ),
+            Column(
               children: [
-                Text(
-                  "Hello,\n$userName",
-                  style: Theme.of(context).textTheme.displaySmall,
+                WeekOrDayTile(
+                  isWeek: true,
+                  image: "assets/week1.png",
+                  title: "Week 1",
+                  description: "dgfyefue oeiry eiruy kj",
+                  onTap: () {
+                    goTo(
+                        context,
+                        const WorkoutsDays(
+                          week: 1,
+                        ));
+                  },
+                  isCompleted: true,
                 ),
-                CircleAvatar()
+                WeekOrDayTile(
+                  isWeek: true,
+                  image: "assets/week2.png",
+                  title: "Week 2",
+                  description: "dgfyefue oeiry eiruy kj",
+                  onTap: () {
+                    goTo(
+                        context,
+                        const WorkoutsDays(
+                          week: 2,
+                        ));
+                  },
+                  isCompleted: false,
+                ),
+                WeekOrDayTile(
+                  isWeek: true,
+                  image: "assets/week3.png",
+                  title: "Week 3",
+                  description: "dgfyefue oeiry eiruy kj",
+                  onTap: () {
+                    goTo(
+                        context,
+                        const WorkoutsDays(
+                          week: 3,
+                        ));
+                  },
+                  isCompleted: false,
+                ),
+                WeekOrDayTile(
+                  isWeek: true,
+                  image: "assets/week4.png",
+                  title: "Week 4",
+                  description: "dgfyefue oeiry eiruy kj",
+                  onTap: () {
+                    goTo(
+                        context,
+                        const WorkoutsDays(
+                          week: 4,
+                        ));
+                  },
+                  isCompleted: false,
+                )
               ],
             ),
-          ),
-          Column(
-            children: [
-              WeekOrDayTile(
-                isWeek: true,
-                image: "assets/week1.png",
-                title: "Week 1",
-                description: "dgfyefue oeiry eiruy kj",
-                onTap: () {
-                  goTo(
-                      context,
-                      const WorkoutsDays(
-                        week: 1,
-                      ));
-                },
-                isCompleted: true,
-              ),
-              WeekOrDayTile(
-                isWeek: true,
-                image: "assets/week2.png",
-                title: "Week 2",
-                description: "dgfyefue oeiry eiruy kj",
-                onTap: () {
-                  goTo(
-                      context,
-                      const WorkoutsDays(
-                        week: 2,
-                      ));
-                },
-                isCompleted: false,
-              ),
-              WeekOrDayTile(
-                isWeek: true,
-                image: "assets/week3.png",
-                title: "Week 3",
-                description: "dgfyefue oeiry eiruy kj",
-                onTap: () {
-                  goTo(
-                      context,
-                      const WorkoutsDays(
-                        week: 3,
-                      ));
-                },
-                isCompleted: false,
-              ),
-              WeekOrDayTile(
-                isWeek: true,
-                image: "assets/week4.png",
-                title: "Week 4",
-                description: "dgfyefue oeiry eiruy kj",
-                onTap: () {
-                  goTo(
-                      context,
-                      const WorkoutsDays(
-                        week: 4,
-                      ));
-                },
-                isCompleted: false,
-              )
-            ],
-          ),
-          SizedBox(
-            height: 55,
-          )
-        ]),
+            SizedBox(
+              height: 55,
+            )
+          ]),
+        ),
       ),
     );
   }

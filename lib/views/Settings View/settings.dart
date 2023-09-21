@@ -33,7 +33,7 @@ class _SettingsState extends State<Settings> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(15.0),
-                      child: GestureDetector(
+                      child: InkWell(
                           onTap: () {},
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,7 +57,7 @@ class _SettingsState extends State<Settings> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(15.0),
-                      child: GestureDetector(
+                      child: InkWell(
                           onTap: () {
                             setState(() {
                               isEnglish = !isEnglish;
@@ -85,7 +85,7 @@ class _SettingsState extends State<Settings> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(15.0),
-                      child: GestureDetector(
+                      child: InkWell(
                           onTap: () {
                             goTo(context, Loading());
                           },
@@ -111,7 +111,7 @@ class _SettingsState extends State<Settings> {
                     child: CircleAvatar(
                       radius: 70.0,
                       backgroundColor: Colors.white,
-                      child: GestureDetector(
+                      child: InkWell(
                         onTap: () {},
                         child: CircleAvatar(
                           child: Align(

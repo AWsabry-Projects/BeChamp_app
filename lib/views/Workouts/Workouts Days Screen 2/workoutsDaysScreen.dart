@@ -13,41 +13,54 @@ class WorkoutsDays extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(
-                Icons.arrow_circle_left_sharp,
-                color: Colors.white,
-                size: 30,
-              )),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: ListView.separated(
-              itemBuilder: (context, index) {
-                return DaysTile(
-                  canAccessNow: true,
-                  onTap: () {
-                    goTo(
-                        context,
-                        DayWorkouts(
-                          day: index + 1,
-                          week: this.week,
-                        ));
-                  },
-                  title: "Day ${index + 1}",
-                );
-              },
-              separatorBuilder: (context, index) {
-                return Divider(
-                  color: Colors.grey,
-                );
-              },
-              itemCount: numberOfDays),
-        ));
+    return Directionality(
+      textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
+      child: Scaffold(
+          appBar: AppBar(
+            leading: isEnglish
+                ? IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_circle_left_sharp,
+                      color: Colors.white,
+                      size: 30,
+                    ))
+                : IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_circle_right_sharp,
+                      color: Colors.white,
+                      size: 30,
+                    )),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return DaysTile(
+                    canAccessNow: true,
+                    onTap: () {
+                      goTo(
+                          context,
+                          DayWorkouts(
+                            day: index + 1,
+                            week: this.week,
+                          ));
+                    },
+                    title: "Day ${index + 1}",
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return Divider(
+                    color: Colors.grey,
+                  );
+                },
+                itemCount: numberOfDays),
+          )),
+    );
   }
 }

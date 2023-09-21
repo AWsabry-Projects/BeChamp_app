@@ -10,6 +10,7 @@ ThemeData theme = ThemeData(
     scaffoldBackgroundColor: Colors.grey[900],
     shadowColor: Color.fromARGB(255, 75, 192, 64),
     textTheme: TextTheme(
+        headlineMedium: TextStyle(fontSize: 30, color: Colors.white),
         displayMedium: TextStyle(
             fontFamily: "bechampBold",
             color: Colors.white,
@@ -76,11 +77,17 @@ class BeChampAppBar extends AppBar {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
-            Icons.arrow_circle_left_rounded,
-            color: Colors.white,
-            size: 30,
-          )),
+          icon: isEnglish
+              ? Icon(
+                  Icons.arrow_circle_left_rounded,
+                  color: Colors.white,
+                  size: 30,
+                )
+              : Icon(
+                  Icons.arrow_circle_right_rounded,
+                  color: Colors.white,
+                  size: 30,
+                )),
     );
   }
 }
