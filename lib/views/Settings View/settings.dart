@@ -20,7 +20,7 @@ class _SettingsState extends State<Settings> {
           children: [
             Stack(children: [
               Container(
-                margin: const EdgeInsets.only(top: 60),
+                // margin: const EdgeInsets.only(top: 20),
                 padding: const EdgeInsets.all(20),
                 width: double.maxFinite,
                 height: MediaQuery.of(context).size.height / 1.3,

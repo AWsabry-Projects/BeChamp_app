@@ -22,9 +22,9 @@ ThemeData theme = ThemeData(
             fontSize: 20,
             color: Colors.white), //and normal text paragraphs
         titleLarge: TextStyle(
-          color: Colors.black,
-          fontSize: 25,
-        ), //button text
+            color: Colors.black,
+            fontSize: 22,
+            fontWeight: FontWeight.w700), //button text
         displayLarge: TextStyle(
           color: Colors.white,
           fontSize: 50,

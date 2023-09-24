@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
       textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
       child: Scaffold(
           extendBody: true,
-          body: pages[currentIndex],
+          body: SafeArea(child: pages[currentIndex]),
           bottomNavigationBar: SnakeNavigationBar.color(
               elevation: 5,
               unselectedItemColor: Colors.grey,
