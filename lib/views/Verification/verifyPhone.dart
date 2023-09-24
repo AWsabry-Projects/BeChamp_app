@@ -12,38 +12,40 @@ class VerifyPhone extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Text(
-              "Phone Verification\n",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-            Text("We sent a code to your number $phone",
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(
+                "Phone Verification\n",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.displaySmall),
-            TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text(
-                  "Change phone",
-                  style: Theme.of(context).textTheme.displaySmall,
-                )),
-            SizedBox(
-              height: 40,
-            ),
-            OtpPinField(
-              onSubmit: onSubmittingCode(context),
-              onChange: (code) {},
-              maxLength: numberOfFields,
-              otpPinFieldStyle: OtpPinFieldStyle(
-                  textStyle: TextStyle(color: Colors.white, fontSize: 30),
-                  defaultFieldBorderColor: Colors.grey.shade700,
-                  activeFieldBorderColor: Colors.grey,
-                  fieldPadding: 5),
-              otpPinFieldDecoration:
-                  OtpPinFieldDecoration.defaultPinBoxDecoration,
-            ),
-          ],
+                style: Theme.of(context).textTheme.displayLarge,
+              ),
+              Text("We sent a code to your number $phone",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.displaySmall),
+              TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(
+                    "Change phone",
+                    style: Theme.of(context).textTheme.displaySmall,
+                  )),
+              SizedBox(
+                height: 40,
+              ),
+              OtpPinField(
+                onSubmit: onSubmittingCode(context),
+                onChange: (code) {},
+                maxLength: numberOfFields,
+                otpPinFieldStyle: OtpPinFieldStyle(
+                    textStyle: TextStyle(color: Colors.white, fontSize: 30),
+                    defaultFieldBorderColor: Colors.grey.shade700,
+                    activeFieldBorderColor: Colors.grey,
+                    fieldPadding: 5),
+                otpPinFieldDecoration:
+                    OtpPinFieldDecoration.defaultPinBoxDecoration,
+              ),
+            ],
+          ),
         ),
       ),
       appBar: AppBar(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class WeekOrDayTile extends StatelessWidget {
   final String? image, title, description;
   final void Function() onTap;
-  final bool? isWeek, isCompleted;
+  final bool? isWeek, isCompleted, isAccessed;
   const WeekOrDayTile(
       {super.key,
       this.image,
@@ -11,14 +11,23 @@ class WeekOrDayTile extends StatelessWidget {
       this.description,
       this.isWeek,
       required this.onTap,
-      required this.isCompleted});
+      required this.isCompleted,
+      required this.isAccessed});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         InkWell(
-          onTap: isCompleted as bool ? null : onTap,
+          onTap: isCompleted as bool
+              ? null
+              : isAccessed as bool
+                  ? onTap
+                  : () {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content:
+                              Text("Complete the previous week at the first")));
+                    },
           child: Column(
             children: [
               Stack(
@@ -32,7 +41,8 @@ class WeekOrDayTile extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding:
+                        EdgeInsets.all(MediaQuery.of(context).size.height / 30),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -41,7 +51,8 @@ class WeekOrDayTile extends StatelessWidget {
                           children: [
                             Text(
                               "$title",
-                              style: Theme.of(context).textTheme.displayLarge,
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 35),
                             ),
                             isWeek as bool
                                 ? Row(
@@ -64,7 +75,9 @@ class WeekOrDayTile extends StatelessWidget {
                           ],
                         ),
                         Icon(Icons.arrow_forward_ios_rounded,
-                            color: Theme.of(context).primaryColor)
+                            color: isAccessed as bool
+                                ? Theme.of(context).primaryColor
+                                : Colors.grey)
                       ],
                     ),
                   ),

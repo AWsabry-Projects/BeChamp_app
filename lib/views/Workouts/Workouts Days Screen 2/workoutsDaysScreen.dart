@@ -38,21 +38,35 @@ class WorkoutsDays extends StatelessWidget {
                     )),
           ),
           body: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: EdgeInsets.all(MediaQuery.of(context).size.width / 20),
             child: ListView.separated(
                 itemBuilder: (context, index) {
-                  return DaysTile(
-                    canAccessNow: true,
-                    onTap: () {
-                      goTo(
-                          context,
-                          DayWorkouts(
-                            day: index + 1,
-                            week: this.week,
-                          ));
-                    },
-                    title: "Day ${index + 1}",
-                  );
+                  if (index == 0)
+                    return DaysTile(
+                      canAccessNow: true,
+                      onTap: () {
+                        goTo(
+                            context,
+                            DayWorkouts(
+                              day: index + 1,
+                              week: this.week,
+                            ));
+                      },
+                      title: "Day ${index + 1}",
+                    );
+                  else
+                    return DaysTile(
+                      canAccessNow: false,
+                      onTap: () {
+                        goTo(
+                            context,
+                            DayWorkouts(
+                              day: index + 1,
+                              week: this.week,
+                            ));
+                      },
+                      title: "Day ${index + 1}",
+                    );
                 },
                 separatorBuilder: (context, index) {
                   return Divider(

@@ -22,15 +22,13 @@ ThemeData theme = ThemeData(
             fontSize: 20,
             color: Colors.white), //and normal text paragraphs
         titleLarge: TextStyle(
-            fontFamily: "bechampBold",
-            color: Colors.black,
-            fontSize: 25,
-            fontWeight: FontWeight.bold), //button text
+          color: Colors.black,
+          fontSize: 25,
+        ), //button text
         displayLarge: TextStyle(
-            fontFamily: "bechampBold",
-            color: Colors.white,
-            fontSize: 45,
-            fontWeight: FontWeight.bold) //Any titles or headers texts
+          color: Colors.white,
+          fontSize: 50,
+        ) //Any titles or headers texts
         ),
     appBarTheme: const AppBarTheme(
       color: Colors.transparent,

@@ -138,7 +138,46 @@ class DayWorkouts extends StatelessWidget {
                         child: Column(
                       children: [
                         ExerciseTile(
+                          isFinished: true,
                           canAccessNow: true,
+                          onTap: () {
+                            goTo(
+                                context,
+                                Exercise(
+                                    muscleName: "bicep",
+                                    gifLink:
+                                        "https://media.tenor.com/aqN6k1GYfVYAAAAM/f-orever-online.gif",
+                                    exerciseName: "jumping rope",
+                                    reps: 15,
+                                    sets: 3,
+                                    day: day,
+                                    week: week,
+                                    rest: 90));
+                          },
+                          title: "bicep",
+                          description: "10x5",
+                        ),
+                        ExerciseTile(
+                          canAccessNow: true,
+                          onTap: () {
+                            goTo(
+                                context,
+                                Exercise(
+                                    muscleName: "bicep",
+                                    gifLink:
+                                        "https://media.tenor.com/aqN6k1GYfVYAAAAM/f-orever-online.gif",
+                                    exerciseName: "jumping rope",
+                                    reps: 15,
+                                    sets: 3,
+                                    day: day,
+                                    week: week,
+                                    rest: 90));
+                          },
+                          title: "bicep",
+                          description: "10x5",
+                        ),
+                        ExerciseTile(
+                          canAccessNow: false,
                           onTap: () {
                             goTo(
                                 context,

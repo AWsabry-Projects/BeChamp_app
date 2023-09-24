@@ -16,56 +16,67 @@ class Dashboard extends StatelessWidget {
             image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage("assets/homeBackground.png"))),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(35.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Hello,\n$userName",
-                    style: Theme.of(context).textTheme.displaySmall,
-                  ),
-                  CircleAvatar()
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.all(MediaQuery.of(context).size.height / 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Hello,\n$userName",
+                      style: Theme.of(context).textTheme.displaySmall,
+                    ),
+                    CircleAvatar()
+                  ],
+                ),
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 3,
-                  child: PageView(
-                    controller:
-                        PageController(viewportFraction: 0.6, initialPage: 1),
-                    children: const [
-                      SectionTile(
-                        imagePath: "assets/home2.png",
-                        title: "Nutrition Plan",
+              SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 3,
+                      child: PageView(
+                        controller: PageController(
+                            viewportFraction: 0.6, initialPage: 1),
+                        children: const [
+                          SectionTile(
+                            imagePath: "assets/home2.png",
+                            title: "Nutrition Plan",
+                          ),
+                          SectionTile(
+                            title: "Workout & Nutrition Plan",
+                            imagePath: "assets/home1.png",
+                          ),
+                          SectionTile(
+                            imagePath: "assets/home3.png",
+                            title: "Workout Plan",
+                          )
+                        ],
                       ),
-                      SectionTile(
-                        title: "Workout & Nutrition Plan",
-                        imagePath: "assets/home1.png",
-                      ),
-                      SectionTile(
-                        imagePath: "assets/home3.png",
-                        title: "Workout Plan",
-                      )
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 15,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(
+                          MediaQuery.of(context).size.height / 100),
+                      child: InkWell(
+                          onTap: () {},
+                          child: Image.asset("assets/startWithMe.png")),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 30,
-                ),
-                SizedBox(height: 150, width: 400, child: Card())
-              ],
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 4,
-            )
-          ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 4,
+              )
+            ],
+          ),
         ),
       ),
     );
