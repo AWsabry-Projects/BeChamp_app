@@ -1,18 +1,13 @@
+import 'dart:ui';
+
 import 'package:bechamp/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 class DayNutrition extends StatelessWidget {
   final int? day;
-  final List<String>? breakFast, afterBreakFast, lunch, afterWorkout, dinner;
+  final List<String>? mealDetails;
 
-  const DayNutrition(
-      {super.key,
-      required this.day,
-      this.breakFast,
-      this.afterBreakFast,
-      this.lunch,
-      this.afterWorkout,
-      this.dinner});
+  const DayNutrition({super.key, required this.day, this.mealDetails});
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +15,11 @@ class DayNutrition extends StatelessWidget {
       textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Theme.of(context).primaryColor,
-          child: Icon(
-            Icons.done,
-            color: Colors.black,
-            size: 30,
-          ),
-        ),
+            onPressed: () {},
+            backgroundColor: Colors.white,
+            child: Container(
+              child: Image.asset("assets/check.png"),
+            )),
         body: Stack(
           children: [
             Container(
@@ -59,122 +51,57 @@ class DayNutrition extends StatelessWidget {
                             )),
                 ),
                 Text(
-                  isEnglish ? "\t  Day $day" : "\t  اليوم $day",
+                  isEnglish ? "\t  Meal $day" : "\t  الوجبة $day",
                   style: const TextStyle(fontSize: 65, color: Colors.white),
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.9),
-                      borderRadius: isEnglish
-                          ? const BorderRadius.only(
-                              topRight: Radius.circular(30))
-                          : const BorderRadius.only(
-                              topLeft: Radius.circular(30))),
-                  height: MediaQuery.of(context).size.height / 1.4,
-                  width: MediaQuery.of(context).size.width / 1.3,
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            isEnglish ? "Breakfast:" : "الفطور:",
-                            style: Theme.of(context).textTheme.headlineMedium,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: List.generate(
-                                  breakFast!.length,
-                                  (index) => Text("${breakFast![index]}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall)),
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                        borderRadius: isEnglish
+                            ? const BorderRadius.only(
+                                topRight: Radius.circular(40))
+                            : const BorderRadius.only(
+                                topLeft: Radius.circular(40))),
+                    height: MediaQuery.of(context).size.height / 1.4,
+                    width: MediaQuery.of(context).size.width / 1.3,
+                    child: ClipRect(
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
+                        child: Container(
+                          color: Colors.black.withOpacity(0.1),
+                          child: SingleChildScrollView(
+                            child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    isEnglish ? "Details:" : "التفاصيل:",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineMedium,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: List.generate(
+                                          mealDetails!.length,
+                                          (index) => Text(
+                                              "${mealDetails![index]}",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .displaySmall)),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            isEnglish ? "After Breakfast:" : "ما بعد الفطور:",
-                            style: Theme.of(context).textTheme.headlineMedium,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: List.generate(
-                                  afterBreakFast!.length,
-                                  (index) => Text("${afterBreakFast![index]}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall)),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            isEnglish ? "Lunch:" : "الغداء:",
-                            style: Theme.of(context).textTheme.headlineMedium,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: List.generate(
-                                  lunch!.length,
-                                  (index) => Text("${lunch![index]}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall)),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            isEnglish ? "After Workout:" : "ما بعد التمرين:",
-                            style: Theme.of(context).textTheme.headlineMedium,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: List.generate(
-                                  afterWorkout!.length,
-                                  (index) => Text("${afterWorkout![index]}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall)),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            isEnglish ? "Dinner:" : "العشاء:",
-                            style: Theme.of(context).textTheme.headlineMedium,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: List.generate(
-                                  dinner!.length,
-                                  (index) => Text("${dinner![index]}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall)),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                )
+                    ))
               ],
             )
           ],

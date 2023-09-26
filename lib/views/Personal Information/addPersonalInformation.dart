@@ -34,7 +34,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
               width: double.maxFinite,
               height: MediaQuery.of(context).size.height / 1.5,
               decoration: BoxDecoration(
-                  color: Colors.grey[700],
+                  color: Color.fromRGBO(38, 38, 38, 1),
                   borderRadius: BorderRadius.circular(30)),
               child: SingleChildScrollView(
                 child: Column(

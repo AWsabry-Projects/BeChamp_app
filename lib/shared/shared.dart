@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 String userName = "TEST"; // user name from backend database
+String userEmail = "test@google.com";
+String phoneNumber = "01111111111";
 bool isEnglish = true; // App Language
 bool isSubscribed = false; // condition to know if user has paid or not
 
 ThemeData theme = ThemeData(
     fontFamily: "bechampFont",
     primaryColor: Color.fromRGBO(206, 255, 0, 1), //app main color
-    scaffoldBackgroundColor: Colors.grey[900],
+    scaffoldBackgroundColor: Color.fromRGBO(24, 24, 24, 1),
     shadowColor: Color.fromARGB(255, 75, 192, 64),
     textTheme: TextTheme(
         headlineMedium: TextStyle(fontSize: 30, color: Colors.white),
@@ -75,17 +77,10 @@ class BeChampAppBar extends AppBar {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: isEnglish
-              ? Icon(
-                  Icons.arrow_circle_left_rounded,
-                  color: Colors.white,
-                  size: 30,
-                )
-              : Icon(
-                  Icons.arrow_circle_right_rounded,
-                  color: Colors.white,
-                  size: 30,
-                )),
+          icon: Image.asset(
+            "assets/back.png",
+            width: 30,
+          )),
     );
   }
 }

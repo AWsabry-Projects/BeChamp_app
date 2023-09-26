@@ -22,8 +22,8 @@ class DaysTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             color: isFinished
                 ? Theme.of(context).primaryColor
-                : Colors.transparent),
-        height: 80,
+                : Color.fromRGBO(42, 42, 42, 1)),
+        height: MediaQuery.of(context).size.height / 20,
         child: InkWell(
           onTap: isFinished
               ? null
@@ -47,14 +47,17 @@ class DaysTile extends StatelessWidget {
                       : Theme.of(context).textTheme.displaySmall,
                 ),
                 isFinished
-                    ? const Icon(
-                        Icons.done,
-                        color: Colors.black,
+                    ? SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset(
+                          "assets/done.png",
+                        ),
                       )
                     : canAccessNow
                         ? Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Theme.of(context).primaryColor,
+                            Icons.circle_outlined,
+                            color: Colors.grey,
                           )
                         : Icon(Icons.lock, color: Colors.white)
               ],

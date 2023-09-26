@@ -51,15 +51,9 @@ class ExerciseTile extends StatelessWidget {
                       : Theme.of(context).textTheme.displaySmall,
                 ),
                 isFinished
-                    ? const Icon(
-                        Icons.done,
-                        color: Colors.black,
-                      )
+                    ? Image.asset("assets/done.png")
                     : canAccessNow
-                        ? Icon(
-                            Icons.play_circle_fill,
-                            color: Theme.of(context).primaryColor,
-                          )
+                        ? Image.asset("assets/playButton.png")
                         : Icon(Icons.lock, color: Colors.white)
               ],
             ),

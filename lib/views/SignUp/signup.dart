@@ -23,7 +23,7 @@ class SignUp extends StatelessWidget {
               width: double.maxFinite,
               height: MediaQuery.of(context).size.height / 1.4,
               decoration: BoxDecoration(
-                  color: Colors.grey[700],
+                  color: Color.fromRGBO(38, 38, 38, 1),
                   borderRadius: BorderRadius.circular(30)),
               child: SingleChildScrollView(
                 child: Column(

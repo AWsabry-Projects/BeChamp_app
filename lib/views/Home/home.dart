@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
               elevation: 5,
               unselectedItemColor: Colors.grey,
               selectedItemColor: Theme.of(context).primaryColor,
-              backgroundColor: Colors.grey[800],
+              backgroundColor: Color.fromRGBO(45, 45, 45, 1),
               snakeShape: SnakeShape.indicator,
               snakeViewColor: Color.fromRGBO(112, 255, 4, 1),
               padding: const EdgeInsets.all(20),
