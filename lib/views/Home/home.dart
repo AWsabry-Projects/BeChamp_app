@@ -1,10 +1,7 @@
 import 'package:bechamp/models/Icons%20Model/beChampIcons.dart';
 import 'package:bechamp/shared/shared.dart';
-import 'package:bechamp/views/Adding%20Goals/addingGoals.dart';
+import 'package:bechamp/views/Adding%20Self%20Photos/addSelfPhotos.dart';
 import 'package:bechamp/views/Home/components.dart';
-import 'package:bechamp/views/Personal%20Information/addPersonalInformation.dart';
-import 'package:bechamp/views/Settings%20View/settings.dart';
-import 'package:bechamp/views/SignUp/signup.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
@@ -22,6 +19,12 @@ class _HomeState extends State<Home> {
     return Directionality(
       textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
       child: Scaffold(
+          floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                goTo(context, AddSelfPhotos());
+              },
+              backgroundColor: Theme.of(context).primaryColor,
+              child: Image.asset("assets/arrow.png")),
           extendBody: true,
           body: pages[currentIndex],
           bottomNavigationBar: SnakeNavigationBar.color(

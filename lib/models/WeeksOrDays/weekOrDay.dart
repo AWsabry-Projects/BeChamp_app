@@ -32,107 +32,128 @@ class _WeekOrDayTileState extends State<WeekOrDayTile> {
           Container(
             height: isExpanded
                 ? MediaQuery.of(context).size.height / 2
-                : MediaQuery.of(context).size.height / 5,
+                : MediaQuery.of(context).size.height / 6,
             decoration: BoxDecoration(
-                color: Colors.black, borderRadius: BorderRadius.circular(30)),
+                color: Colors.black, borderRadius: BorderRadius.circular(40)),
           ),
-          Image.asset("${widget.image}"),
-          widget.isAccessed as bool
-              ? ExpandedTile(
-                  trailing: Image.asset("assets/chevron-circle-right-Bold.png"),
-                  enabled: widget.isAccessed as bool,
-                  onTap: () {
-                    setState(() {
-                      isExpanded = !isExpanded;
-                    });
-                  },
-                  theme: ExpandedTileThemeData(
-                      headerColor: Colors.transparent,
-                      contentBackgroundColor: Colors.transparent),
-                  title: Padding(
-                    padding:
-                        EdgeInsets.all(MediaQuery.of(context).size.height / 80),
-                    child: Column(
+          Stack(
+            alignment: isExpanded ? Alignment.topCenter : Alignment.bottomLeft,
+            children: [
+              Image.asset("${widget.image}"),
+              widget.isAccessed as bool
+                  ? SizedBox(
+                      width: double.maxFinite,
+                      child: ExpandedTile(
+                          contentseparator: 0,
+                          trailing: SizedBox(
+                            width: MediaQuery.of(context).size.width / 12,
+                            child: Image.asset(
+                              "assets/chevron-circle-right-Bold.png",
+                            ),
+                          ),
+                          enabled: widget.isAccessed as bool,
+                          onTap: () {
+                            setState(() {
+                              isExpanded = !isExpanded;
+                            });
+                          },
+                          theme: ExpandedTileThemeData(
+                              headerPadding: EdgeInsets.all(0),
+                              headerColor: Colors.transparent,
+                              contentBackgroundColor: Colors.transparent),
+                          title: Padding(
+                            padding: EdgeInsets.all(
+                                MediaQuery.of(context).size.height / 80),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "${widget.title}",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 35),
+                                ),
+                                widget.isWeek as bool
+                                    ? Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            height: 20,
+                                            margin: EdgeInsets.all(8),
+                                            width: 3,
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                          Text(
+                                            "${widget.description}",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .displaySmall,
+                                          ),
+                                        ],
+                                      )
+                                    : SizedBox()
+                              ],
+                            ),
+                          ),
+                          content: Column(
+                            children: List.generate(
+                                widget.contentDays.length,
+                                (index) => Column(
+                                      children: [
+                                        widget.contentDays[index],
+                                        SizedBox(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height /
+                                              100,
+                                        )
+                                      ],
+                                    )),
+                          ),
+                          controller: ExpandedTileController()),
+                    )
+                  : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "${widget.title}",
-                          style: TextStyle(color: Colors.white, fontSize: 35),
+                        Container(),
+                        Padding(
+                          padding: EdgeInsets.all(
+                              MediaQuery.of(context).size.height / 40),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "${widget.title}",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 35),
+                              ),
+                              widget.isWeek as bool
+                                  ? Row(
+                                      children: [
+                                        Container(
+                                          height: 20,
+                                          margin: EdgeInsets.all(8),
+                                          width: 3,
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        Text(
+                                          "${widget.description}",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .displaySmall,
+                                        ),
+                                      ],
+                                    )
+                                  : SizedBox()
+                            ],
+                          ),
                         ),
-                        widget.isWeek as bool
-                            ? Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: 20,
-                                    margin: EdgeInsets.all(8),
-                                    width: 3,
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  Text(
-                                    "${widget.description}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .displaySmall,
-                                  ),
-                                ],
-                              )
-                            : SizedBox()
                       ],
                     ),
-                  ),
-                  content: Column(
-                    children: List.generate(
-                        widget.contentDays.length,
-                        (index) => Column(
-                              children: [
-                                widget.contentDays[index],
-                                SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height / 100,
-                                )
-                              ],
-                            )),
-                  ),
-                  controller: ExpandedTileController())
-              : Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(),
-                    Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 40),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "${widget.title}",
-                            style: TextStyle(color: Colors.white, fontSize: 35),
-                          ),
-                          widget.isWeek as bool
-                              ? Row(
-                                  children: [
-                                    Container(
-                                      height: 20,
-                                      margin: EdgeInsets.all(8),
-                                      width: 3,
-                                      color: Theme.of(context).primaryColor,
-                                    ),
-                                    Text(
-                                      "${widget.description}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall,
-                                    ),
-                                  ],
-                                )
-                              : SizedBox()
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+            ],
+          ),
           Stack(
             children: [
               widget.isCompleted as bool

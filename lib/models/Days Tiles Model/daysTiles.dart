@@ -48,8 +48,8 @@ class DaysTile extends StatelessWidget {
                 ),
                 isFinished
                     ? SizedBox(
-                        width: 100,
-                        height: 100,
+                        width: MediaQuery.of(context).size.width / 10,
+                        height: MediaQuery.of(context).size.height / 10,
                         child: Image.asset(
                           "assets/done.png",
                         ),
