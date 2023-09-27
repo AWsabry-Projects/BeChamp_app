@@ -2,6 +2,7 @@ import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/Adding%20Goals/addingGoals.dart';
 import 'package:bechamp/views/Personal%20Information/components.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PersonalInformation extends StatefulWidget {
   const PersonalInformation({super.key});
@@ -13,6 +14,8 @@ class PersonalInformation extends StatefulWidget {
 class _PersonalInformationState extends State<PersonalInformation> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
+
     return Scaffold(
       appBar: BeChampAppBar(context).build(context),
       body: SingleChildScrollView(
@@ -24,7 +27,10 @@ class _PersonalInformationState extends State<PersonalInformation> {
               padding: const EdgeInsets.all(20.0),
               child: Text(
                 "Personal Information",
-                style: Theme.of(context).textTheme.displayLarge,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 55,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(
@@ -32,7 +38,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
             ),
             Container(
               width: double.maxFinite,
-              height: MediaQuery.of(context).size.height / 1.5,
+              height: 594.h,
               decoration: BoxDecoration(
                   color: Color.fromRGBO(38, 38, 38, 1),
                   borderRadius: BorderRadius.circular(30)),
@@ -44,8 +50,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                       height: 10,
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: TextField(
                         style: TextStyle(color: Colors.grey.shade300),
                         decoration: InputDecoration(
@@ -71,8 +76,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: TextField(
                         style: TextStyle(color: Colors.grey.shade300),
                         keyboardType: TextInputType.number,
@@ -99,8 +103,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: TextField(
                         style: TextStyle(color: Colors.grey.shade300),
                         decoration: InputDecoration(
@@ -126,8 +129,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -168,8 +170,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -181,8 +182,10 @@ class _PersonalInformationState extends State<PersonalInformation> {
                                   },
                                   child: Text(
                                     "Next >",
-                                    style:
-                                        Theme.of(context).textTheme.titleLarge,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
                                   ))),
                         ],
                       ),

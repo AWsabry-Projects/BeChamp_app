@@ -2,6 +2,7 @@ import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/Adding%20Goals/components.dart';
 import 'package:bechamp/views/Congratulations/congratulations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vertical_picker/vertical_picker.dart';
 
 class AddingGoals extends StatelessWidget {
@@ -9,6 +10,8 @@ class AddingGoals extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
+
     return Scaffold(
       appBar: BeChampAppBar(context).build(context),
       body: SingleChildScrollView(
@@ -20,18 +23,25 @@ class AddingGoals extends StatelessWidget {
                 Text(
                   "What's your goal ?\n",
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold),
                 ),
                 Text(
                     "Your answer will help us to create your personalized plan\n",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 15,
                       color: Colors.white,
                       fontFamily: "bechampFont",
                     )),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 2.1,
+                  height: 53.h,
+                ),
+                SizedBox(
+                  height: 319.h,
+                  width: 308.44.w,
                   child: VerticalPicker(
                       borderColor: Colors.green[600],
                       borderThickness: 6,
@@ -64,6 +74,9 @@ class AddingGoals extends StatelessWidget {
                       rightMargin: 40,
                       itemHeight: 100),
                 ),
+                SizedBox(
+                  height: 80.h,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -76,7 +89,10 @@ class AddingGoals extends StatelessWidget {
                             },
                             child: Text(
                               "Next >",
-                              style: Theme.of(context).textTheme.titleLarge,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
                             ))),
                   ],
                 )

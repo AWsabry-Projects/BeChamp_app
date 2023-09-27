@@ -1,6 +1,7 @@
 import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/Verification/components.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
 
 class VerifyPhone extends StatelessWidget {
@@ -9,25 +10,33 @@ class VerifyPhone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
+
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(27.w),
         child: SingleChildScrollView(
           child: Column(
             children: [
               Text(
                 "Phone Verification\n",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.displayLarge,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold),
               ),
               Text("We sent a code to your number $phone",
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.displaySmall),
+                  style: TextStyle(color: Colors.white, fontSize: 15)),
               TextButton(
                   onPressed: () => Navigator.pop(context),
                   child: Text(
                     "Change phone",
-                    style: Theme.of(context).textTheme.displaySmall,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        decoration: TextDecoration.underline),
                   )),
               SizedBox(
                 height: 40,

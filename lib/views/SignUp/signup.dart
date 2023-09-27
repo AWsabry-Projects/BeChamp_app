@@ -2,12 +2,15 @@ import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/SignUp/components.dart';
 import 'package:bechamp/views/Verification/verifyPhone.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
+
     return Scaffold(
       appBar: BeChampAppBar(context).build(context),
       body: SingleChildScrollView(
@@ -17,11 +20,17 @@ class SignUp extends StatelessWidget {
             Center(
                 child: Text(
               "Sign Up\n",
-              style: Theme.of(context).textTheme.displayLarge,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold),
             )),
+            SizedBox(
+              height: 51.h,
+            ),
             Container(
               width: double.maxFinite,
-              height: MediaQuery.of(context).size.height / 1.4,
+              height: 654.h,
               decoration: BoxDecoration(
                   color: Color.fromRGBO(38, 38, 38, 1),
                   borderRadius: BorderRadius.circular(30)),
@@ -33,8 +42,7 @@ class SignUp extends StatelessWidget {
                       height: MediaQuery.of(context).size.height / 100,
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: TextField(
                         style: TextStyle(color: Colors.grey.shade300),
                         decoration: InputDecoration(
@@ -60,8 +68,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: TextField(
                         style: TextStyle(color: Colors.grey.shade300),
                         decoration: InputDecoration(
@@ -87,8 +94,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: TextField(
                         style: TextStyle(color: Colors.grey.shade300),
                         keyboardType: TextInputType.number,
@@ -115,8 +121,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: TextField(
                         style: TextStyle(color: Colors.grey.shade300),
                         decoration: InputDecoration(
@@ -142,8 +147,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.height / 25),
+                      padding: EdgeInsets.all(36.w),
                       child: SizedBox(
                           width: double.maxFinite,
                           height: 50,

@@ -1,12 +1,15 @@
 import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/Home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Congratulations extends StatelessWidget {
   const Congratulations({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
+
     return Scaffold(
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -36,19 +39,18 @@ class Congratulations extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "Congratulations !\n",
+                    "Congratulations !",
                     style: TextStyle(
-                        fontFamily: "bechampBold",
                         color: Theme.of(context).primaryColor,
-                        fontSize: 40,
+                        fontSize: 45,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "You can enjoy your app now",
+                    "\nYou can enjoy your app now",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 17,
+                      fontSize: 20,
                       fontFamily: "bechampFont",
                     ),
                   ),
@@ -58,15 +60,18 @@ class Congratulations extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: SizedBox(
-                        height: 50,
-                        width: double.maxFinite,
+                        height: 52.h,
+                        width: 342.w,
                         child: BeChampButton(
                             onPressed: () {
                               goTo(context, Home());
                             },
                             child: Text(
                               "Get Started.",
-                              style: Theme.of(context).textTheme.titleLarge,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.bold),
                             ))),
                   ),
                   SizedBox(
