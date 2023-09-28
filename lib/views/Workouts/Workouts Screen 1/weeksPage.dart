@@ -15,6 +15,7 @@ class WeeksScreen extends StatelessWidget {
       textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
       child: Scaffold(
         body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(children: [
             Padding(
               padding: EdgeInsets.all(MediaQuery.of(context).size.height / 20),

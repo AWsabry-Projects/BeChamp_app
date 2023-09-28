@@ -2,6 +2,7 @@ import 'package:bechamp/models/Days%20Tiles%20Model/daysTiles.dart';
 import 'package:bechamp/models/WeeksOrDays/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_expanded_tile/flutter_expanded_tile.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WeekOrDayTile extends StatefulWidget {
   final String? image, title, description;
@@ -24,15 +25,15 @@ class WeekOrDayTile extends StatefulWidget {
 class _WeekOrDayTileState extends State<WeekOrDayTile> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
+
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15),
+      padding: EdgeInsets.symmetric(vertical: 15.h),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
           Container(
-            height: isExpanded
-                ? MediaQuery.of(context).size.height / 2
-                : MediaQuery.of(context).size.height / 6,
+            height: isExpanded ? 368.h : MediaQuery.of(context).size.height / 6,
             decoration: BoxDecoration(
                 color: Colors.black, borderRadius: BorderRadius.circular(40)),
           ),
@@ -58,40 +59,53 @@ class _WeekOrDayTileState extends State<WeekOrDayTile> {
                             });
                           },
                           theme: ExpandedTileThemeData(
+                              trailingPadding:
+                                  EdgeInsets.symmetric(horizontal: 28.w),
+                              leadingPadding: EdgeInsets.all(0),
+                              titlePadding: EdgeInsets.all(0),
+                              contentPadding: EdgeInsets.all(0),
                               headerPadding: EdgeInsets.all(0),
                               headerColor: Colors.transparent,
                               contentBackgroundColor: Colors.transparent),
                           title: Padding(
-                            padding: EdgeInsets.all(
-                                MediaQuery.of(context).size.height / 80),
+                            padding: EdgeInsets.all(34.h),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   "${widget.title}",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 35),
+                                      color: Colors.white,
+                                      fontSize: 35,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 widget.isWeek as bool
-                                    ? Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            height: 20,
-                                            margin: EdgeInsets.all(8),
-                                            width: 3,
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                          ),
-                                          Text(
-                                            "${widget.description}",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .displaySmall,
-                                          ),
-                                        ],
-                                      )
+                                    ? isExpanded
+                                        ? SizedBox()
+                                        : Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                height: 20,
+                                                width: 3,
+                                                margin: EdgeInsets.all(5),
+                                                color: Theme.of(context)
+                                                    .primaryColor,
+                                              ),
+                                              SizedBox(
+                                                width: 204.w,
+                                                child: Text(
+                                                  "${widget.description}",
+                                                  overflow: TextOverflow.fade,
+                                                  maxLines: 1,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .displaySmall,
+                                                ),
+                                              ),
+                                            ],
+                                          )
                                     : SizedBox()
                               ],
                             ),
@@ -103,10 +117,7 @@ class _WeekOrDayTileState extends State<WeekOrDayTile> {
                                       children: [
                                         widget.contentDays[index],
                                         SizedBox(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height /
-                                              100,
+                                          height: 10.h,
                                         )
                                       ],
                                     )),
@@ -127,7 +138,9 @@ class _WeekOrDayTileState extends State<WeekOrDayTile> {
                               Text(
                                 "${widget.title}",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 35),
+                                    color: Colors.white,
+                                    fontSize: 35,
+                                    fontWeight: FontWeight.bold),
                               ),
                               widget.isWeek as bool
                                   ? Row(

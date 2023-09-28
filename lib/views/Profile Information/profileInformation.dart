@@ -12,6 +12,7 @@ class ProfileInformation extends StatelessWidget {
       body: Directionality(
         textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

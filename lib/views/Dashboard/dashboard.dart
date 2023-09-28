@@ -17,6 +17,7 @@ class Dashboard extends StatelessWidget {
                 fit: BoxFit.cover,
                 image: AssetImage("assets/homeBackground.png"))),
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

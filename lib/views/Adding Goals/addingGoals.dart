@@ -15,6 +15,7 @@ class AddingGoals extends StatelessWidget {
     return Scaffold(
       appBar: BeChampAppBar(context).build(context),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -40,40 +41,51 @@ class AddingGoals extends StatelessWidget {
                   height: 53.h,
                 ),
                 SizedBox(
-                  height: 319.h,
-                  width: 308.44.w,
-                  child: VerticalPicker(
-                      borderColor: Colors.green[600],
-                      borderThickness: 6,
-                      items: [
-                        Text(
-                          goals[0],
-                          style: Theme.of(context).textTheme.displayMedium,
+                    height: 330.h,
+                    width: 315.w,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        ListWheelScrollView(
+                          physics: BouncingScrollPhysics(),
+                          squeeze: 1,
+                          onSelectedItemChanged: (val) {
+                            print(goals[val]);
+                          },
+                          overAndUnderCenterOpacity: 0.4,
+                          itemExtent: 90,
+                          magnification: 1.1,
+                          useMagnifier: true,
+                          children: List.generate(
+                              5,
+                              (index) => Text(
+                                    "\n" + goals[index],
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.bold),
+                                  )),
                         ),
-                        Text(
-                          goals[1],
-                          style: Theme.of(context).textTheme.displayMedium,
-                        ),
-                        Text(
-                          goals[2],
-                          style: Theme.of(context).textTheme.displayMedium,
-                        ),
-                        Text(
-                          goals[3],
-                          style: Theme.of(context).textTheme.displayMedium,
-                        ),
-                        Text(
-                          goals[4],
-                          style: Theme.of(context).textTheme.displayMedium,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              color: Theme.of(context).primaryColor,
+                              height: 7.h,
+                              width: 250.w,
+                            ),
+                            SizedBox(
+                              height: 105.h,
+                            ),
+                            Container(
+                              color: Theme.of(context).primaryColor,
+                              height: 7.h,
+                              width: 250.w,
+                            )
+                          ],
                         )
                       ],
-                      onSelectedChanged: (goal) {
-                        choosedGoal = goals[goal];
-                      },
-                      leftMargin: 40,
-                      rightMargin: 40,
-                      itemHeight: 100),
-                ),
+                    )),
                 SizedBox(
                   height: 80.h,
                 ),
@@ -81,7 +93,8 @@ class AddingGoals extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(
-                        height: 50,
+                        height: 60.h,
+                        width: 110.w,
                         child: BeChampButton(
                             onPressed: () {
                               submitGoal(); // it will take the choosed goal directle from the variable (choosedGoal) in components file

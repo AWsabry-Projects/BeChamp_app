@@ -16,6 +16,7 @@ class VerifyPhone extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(27.w),
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             children: [
               Text(
@@ -57,17 +58,7 @@ class VerifyPhone extends StatelessWidget {
           ),
         ),
       ),
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_circle_left_sharp,
-              color: Colors.white,
-              size: 30,
-            )),
-      ),
+      appBar: BeChampAppBar(context).build(context),
     );
   }
 }

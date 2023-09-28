@@ -19,6 +19,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
     return Scaffold(
       appBar: BeChampAppBar(context).build(context),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,6 +44,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                   color: Color.fromRGBO(38, 38, 38, 1),
                   borderRadius: BorderRadius.circular(30)),
               child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

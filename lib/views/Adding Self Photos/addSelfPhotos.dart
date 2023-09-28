@@ -96,7 +96,10 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                         },
                         child: Text(
                           "Upload your photo",
-                          style: TextStyle(color: Colors.black, fontSize: 20),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
                         )),
                   ),
                   SizedBox(
@@ -145,8 +148,10 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                     child: BeChampButton(
                         onPressed: onTapOnSend,
                         child: Text("Send",
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 20))),
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold))),
                   ),
                 ],
               ),

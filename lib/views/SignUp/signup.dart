@@ -14,6 +14,7 @@ class SignUp extends StatelessWidget {
     return Scaffold(
       appBar: BeChampAppBar(context).build(context),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -35,6 +36,7 @@ class SignUp extends StatelessWidget {
                   color: Color.fromRGBO(38, 38, 38, 1),
                   borderRadius: BorderRadius.circular(30)),
               child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -161,7 +163,10 @@ class SignUp extends StatelessWidget {
                               },
                               child: Text(
                                 "Sign Up",
-                                style: Theme.of(context).textTheme.titleLarge,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold),
                               ))),
                     )
                   ],

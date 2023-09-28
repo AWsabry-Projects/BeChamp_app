@@ -50,7 +50,7 @@ class BeChampButton extends ElevatedButton {
                 backgroundColor:
                     MaterialStateProperty.all(Color.fromRGBO(206, 255, 0, 1)),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)))));
+                    borderRadius: BorderRadius.circular(15)))));
 }
 
 void goTo(BuildContext context, Widget newRoute) =>

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SectionTile extends StatelessWidget {
   final String? imagePath, title;
@@ -6,6 +7,8 @@ class SectionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
+
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -15,7 +18,6 @@ class SectionTile extends StatelessWidget {
             child: Text(
               "$title",
               style: TextStyle(
-                  fontFamily: "bechampBold",
                   color: Colors.white,
                   fontSize: 25,
                   fontWeight: FontWeight.bold),

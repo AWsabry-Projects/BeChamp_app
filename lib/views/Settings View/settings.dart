@@ -1,6 +1,7 @@
 import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/Profile%20Information/profileInformation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -12,23 +13,25 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
     return Scaffold(
       extendBody: true,
       body: Directionality(
         textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height / 10,
+                height: 200.h,
               ),
               Stack(children: [
                 Container(
                   margin: const EdgeInsets.only(top: 60),
-                  padding: const EdgeInsets.all(20),
+                  padding: EdgeInsets.symmetric(horizontal: 43.w),
                   width: double.maxFinite,
-                  height: MediaQuery.of(context).size.height / 1.2,
+                  height: 676.h,
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(38, 38, 38, 1),
                     borderRadius: BorderRadius.circular(16.0),
@@ -37,7 +40,7 @@ class _SettingsState extends State<Settings> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(15.0),
+                        padding: EdgeInsets.all(15),
                         child: InkWell(
                             onTap: () {
                               goTo(context, ProfileInformation());
@@ -59,10 +62,6 @@ class _SettingsState extends State<Settings> {
                                     color: Colors.white,
                                   )
                                 ])),
-                      ),
-                      Divider(
-                        thickness: 1,
-                        color: Colors.grey,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(15.0),
@@ -89,10 +88,6 @@ class _SettingsState extends State<Settings> {
                                           .displaySmall)
                                 ])),
                       ),
-                      Divider(
-                        thickness: 1,
-                        color: Colors.grey,
-                      ),
                       Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: InkWell(
@@ -118,29 +113,43 @@ class _SettingsState extends State<Settings> {
                 ),
                 Align(
                     alignment: Alignment.topCenter,
-                    child: SizedBox(
-                      child: CircleAvatar(
-                        radius: 70.0,
-                        backgroundColor: Colors.white,
-                        child: InkWell(
-                          onTap: () {},
+                    child: Column(
+                      children: [
+                        SizedBox(
                           child: CircleAvatar(
-                            child: Align(
-                              alignment: Alignment.bottomRight,
+                            radius: 70.0,
+                            backgroundColor: Colors.white,
+                            child: InkWell(
+                              onTap: () {},
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                radius: 22.0,
-                                child: Icon(
-                                  Icons.camera_alt,
-                                  size: 15.0,
-                                  color: Color(0xFF404040),
+                                child: Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.white,
+                                    radius: 22.0,
+                                    child: Icon(
+                                      Icons.camera_alt,
+                                      size: 15.0,
+                                      color: Color(0xFF404040),
+                                    ),
+                                  ),
                                 ),
+                                radius: 70.0,
                               ),
                             ),
-                            radius: 70.0,
                           ),
                         ),
-                      ),
+                        SizedBox(
+                          height: 15.h,
+                        ),
+                        Text(
+                          userName,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
                     )),
               ]),
             ],
