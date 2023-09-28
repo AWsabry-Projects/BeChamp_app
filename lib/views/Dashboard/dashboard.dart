@@ -27,9 +27,23 @@ class Dashboard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Hello,\n$userName",
-                      style: Theme.of(context).textTheme.displaySmall,
+                    Column(
+                      children: [
+                        Text(
+                          "Hello",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          "$userName",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
                     CircleAvatar()
                   ],
