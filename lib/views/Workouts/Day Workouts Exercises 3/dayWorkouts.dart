@@ -2,6 +2,7 @@ import 'package:bechamp/models/Exercise%20Model/exerciseModel.dart';
 import 'package:bechamp/models/Exercise%20Tiles%20model/exerciseTileModel.dart';
 import 'package:bechamp/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DayWorkouts extends StatelessWidget {
   final String? exerciseName,
@@ -20,6 +21,7 @@ class DayWorkouts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(428, 926));
     return Directionality(
       textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
       child: Scaffold(
@@ -35,17 +37,20 @@ class DayWorkouts extends StatelessWidget {
             ),
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(40.0),
+                padding: EdgeInsets.all(40.0.w),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: Image.asset("assets/back.png")),
-                    SizedBox(height: MediaQuery.of(context).size.height / 14),
+                    Padding(
+                      padding: EdgeInsets.only(top: 37.h),
+                      child: IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Image.asset("assets/back.png")),
+                    ),
+                    SizedBox(height: 69.h),
                     Text(
                       isEnglish ? "Exercise\n" : "تمرين\n",
                       style: TextStyle(color: Colors.white, fontSize: 30),
@@ -54,8 +59,10 @@ class DayWorkouts extends StatelessWidget {
                       isEnglish ? "$description\n" : "$arabicDescription\n",
                       style: TextStyle(color: Colors.grey, fontSize: 12),
                     ),
+                    SizedBox(height: 18.1.h),
                     Container(
-                      height: 62,
+                      height: 62.h,
+                      width: 340.w,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
                           borderRadius: BorderRadius.circular(20)),
@@ -68,13 +75,14 @@ class DayWorkouts extends StatelessWidget {
                             children: [
                               Text(
                                 isEnglish ? "Day" : "اليوم",
-                                style: Theme.of(context).textTheme.displaySmall,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
                               ),
                               Text(
                                 "$day",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 20),
+                                    fontSize: 15),
                               )
                             ],
                           ),
@@ -88,13 +96,14 @@ class DayWorkouts extends StatelessWidget {
                             children: [
                               Text(
                                 isEnglish ? "Week" : "الأسبوع",
-                                style: Theme.of(context).textTheme.displaySmall,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
                               ),
                               Text(
                                 "$week",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 20),
+                                    fontSize: 15),
                               )
                             ],
                           ),
@@ -108,7 +117,8 @@ class DayWorkouts extends StatelessWidget {
                             children: [
                               Text(
                                 isEnglish ? "Muscle" : "العضله",
-                                style: Theme.of(context).textTheme.displaySmall,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
                               ),
                               Text(
                                 isEnglish
@@ -116,7 +126,7 @@ class DayWorkouts extends StatelessWidget {
                                     : "${this.arabicExerciseName}",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 20),
+                                    fontSize: 15),
                               ),
                             ],
                           )
@@ -132,8 +142,6 @@ class DayWorkouts extends StatelessWidget {
                           child: Column(
                         children: [
                           ExerciseTile(
-                            isFinished: true,
-                            canAccessNow: true,
                             onTap: () {
                               goTo(
                                   context,
@@ -152,7 +160,6 @@ class DayWorkouts extends StatelessWidget {
                             description: "10x5",
                           ),
                           ExerciseTile(
-                            canAccessNow: true,
                             onTap: () {
                               goTo(
                                   context,
@@ -171,7 +178,6 @@ class DayWorkouts extends StatelessWidget {
                             description: "10x5",
                           ),
                           ExerciseTile(
-                            canAccessNow: false,
                             onTap: () {
                               goTo(
                                   context,
