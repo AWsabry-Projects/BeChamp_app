@@ -39,14 +39,14 @@ class ExerciseTile extends StatelessWidget {
                         Text(
                           "$title",
                           style: TextStyle(
-                              fontSize: 23,
+                              fontSize: 23.sp,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "$description",
                           style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 17.sp,
                             color: Colors.white,
                           ),
                         ),

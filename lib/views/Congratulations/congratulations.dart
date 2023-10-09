@@ -41,8 +41,9 @@ class Congratulations extends StatelessWidget {
                   Text(
                     "Congratulations !",
                     style: TextStyle(
+                        fontFamily: "assets/Gilroy-ExtraBold.otf",
                         color: Theme.of(context).primaryColor,
-                        fontSize: 45,
+                        fontSize: 45.sp,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
@@ -50,7 +51,7 @@ class Congratulations extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontFamily: "bechampFont",
                     ),
                   ),
@@ -67,10 +68,11 @@ class Congratulations extends StatelessWidget {
                               goTo(context, Home());
                             },
                             child: Text(
-                              "Get Started.",
+                              "Start",
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 23,
+                                  fontFamily: "assets/Gilroy-ExtraBold.otf",
+                                  fontSize: 23.sp,
                                   fontWeight: FontWeight.bold),
                             ))),
                   ),

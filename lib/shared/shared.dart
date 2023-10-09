@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 String userName = "TEST"; // user name from backend database
 String userEmail = "test@google.com";
@@ -12,24 +13,24 @@ ThemeData theme = ThemeData(
     scaffoldBackgroundColor: Color.fromRGBO(24, 24, 24, 1),
     shadowColor: Color.fromARGB(255, 75, 192, 64),
     textTheme: TextTheme(
-        headlineMedium: TextStyle(fontSize: 30, color: Colors.white),
+        headlineMedium: TextStyle(fontSize: 30.sp, color: Colors.white),
         displayMedium: TextStyle(
             fontFamily: "bechampBold",
             color: Colors.white,
-            fontSize: 34,
+            fontSize: 34.sp,
             fontWeight: FontWeight.bold), //for vertical Slider
 
         displaySmall: TextStyle(
             fontFamily: "bechampFont",
-            fontSize: 20,
+            fontSize: 20.sp,
             color: Colors.white), //and normal text paragraphs
         titleLarge: TextStyle(
           color: Colors.black,
-          fontSize: 25,
+          fontSize: 25.sp,
         ), //button text
         displayLarge: TextStyle(
           color: Colors.white,
-          fontSize: 50,
+          fontSize: 50.sp,
         ) //Any titles or headers texts
         ),
     appBarTheme: const AppBarTheme(
@@ -50,7 +51,7 @@ class BeChampButton extends ElevatedButton {
                 backgroundColor:
                     MaterialStateProperty.all(Color.fromRGBO(206, 255, 0, 1)),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)))));
+                    borderRadius: BorderRadius.circular(15.r)))));
 }
 
 void goTo(BuildContext context, Widget newRoute) =>

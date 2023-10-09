@@ -4,13 +4,13 @@ import 'package:bechamp/models/WeeksOrDays/weekOrDay.dart';
 import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/Workouts/Day%20Workouts%20Exercises%203/dayWorkouts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WeeksScreen extends StatelessWidget {
   const WeeksScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    isExpanded = false;
     return Directionality(
       textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
       child: Scaffold(
@@ -27,14 +27,14 @@ class WeeksScreen extends StatelessWidget {
                       Text(
                         "Hello",
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           color: Colors.white,
                         ),
                       ),
                       Text(
                         "$userName",
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
                       ),
@@ -49,11 +49,35 @@ class WeeksScreen extends StatelessWidget {
               child: Column(
                 children: [
                   WeekOrDayTile(
-                    contentDays: [DaysTile(onTap: () {})],
+                    isExpanded: false,
+
+                    contentDays: [
+                      DaysTile(
+                        onTap: () {},
+                        title: "day 1 (chest, triceps)",
+                        isFinished: true,
+                      ),
+                      DaysTile(
+                        onTap: () {},
+                        title: "day 2 (Back, Biceps)",
+                      ),
+                      DaysTile(
+                        onTap: () {},
+                        title: "Days 3 Legs",
+                      ),
+                      DaysTile(
+                        onTap: () {},
+                        title: "Day 4 (Arms)",
+                      ),
+                      DaysTile(
+                        onTap: () {},
+                        title: "Day 5,6,7 ",
+                      )
+                    ],
                     isCompleted: true,
-                    isAccessed: false,
+                    isAccessed: !false,
                     isWeek: true,
-                    image: "assets/week1.png",
+                    image: "assets/week_1.png",
                     title: "Week 1",
                     description: "dgfyefue oeiry eiruy kj",
                     // onTap: () {
@@ -65,6 +89,8 @@ class WeeksScreen extends StatelessWidget {
                     // },
                   ),
                   WeekOrDayTile(
+                    isExpanded: false,
+
                     contentDays: [
                       DaysTile(
                           canAccessNow: true,
@@ -73,11 +99,10 @@ class WeeksScreen extends StatelessWidget {
                             goTo(
                                 context,
                                 const DayWorkouts(
-                                  exerciseName: "Biceps",
+                                  exerciseName: "Biceps jdfgudjhs idhd s",
                                   day: 1,
                                   week: 2,
-                                  description:
-                                      "dhshisoh  sudiug idgwif weywf efweyf wuyf uw fhw oh owiy wur iuwg wuyfruwfruywgugw uwyfuwyftwfeuwgewi wiuwyrwyufrwuf ",
+                                  description: "04 workout weeks for beginner",
                                 ));
                           }),
                       DaysTile(onTap: () {}),
@@ -89,13 +114,15 @@ class WeeksScreen extends StatelessWidget {
                     isWeek: true,
                     image: "assets/week2.png",
                     title: "Week 2",
-                    description: "dgfyefue oeiry eiruy kj",
+                    description: "04 workout weeks for beginner",
                     // onTap: () {
 
                     // },
-                    isCompleted: false,
+                    isCompleted: !true,
                   ),
                   WeekOrDayTile(
+                    isExpanded: false,
+
                     contentDays: [],
                     isAccessed: false,
                     isWeek: true,
@@ -112,6 +139,8 @@ class WeeksScreen extends StatelessWidget {
                     isCompleted: false,
                   ),
                   WeekOrDayTile(
+                    isExpanded: false,
+
                     contentDays: [],
                     isAccessed: false,
                     isWeek: true,

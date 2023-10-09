@@ -26,14 +26,15 @@ class AddingGoals extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 40,
+                      fontFamily: "assets/Gilroy-ExtraBold.otf",
+                      fontSize: 40.sp,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                     "Your answer will help us to create your personalized plan\n",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 15.sp,
                       color: Colors.white,
                       fontFamily: "bechampFont",
                     )),
@@ -61,8 +62,11 @@ class AddingGoals extends StatelessWidget {
                               (index) => Text(
                                     "\n" + goals[index],
                                     style: TextStyle(
+                                        fontFamily:
+                                            "assets/Gilroy-ExtraBold.otf",
+                                        wordSpacing: 0.36.sp,
                                         color: Colors.white,
-                                        fontSize: 32,
+                                        fontSize: 32.sp,
                                         fontWeight: FontWeight.bold),
                                   )),
                         ),
@@ -93,8 +97,8 @@ class AddingGoals extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(
-                        height: 60.h,
-                        width: 110.w,
+                        height: 52.h,
+                        width: 99.w,
                         child: BeChampButton(
                             onPressed: () {
                               submitGoal(); // it will take the choosed goal directle from the variable (choosedGoal) in components file
@@ -104,7 +108,7 @@ class AddingGoals extends StatelessWidget {
                               "Next >",
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.bold),
                             ))),
                   ],

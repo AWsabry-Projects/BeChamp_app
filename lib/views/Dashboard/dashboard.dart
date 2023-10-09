@@ -35,15 +35,16 @@ class Dashboard extends StatelessWidget {
                         Text(
                           "Hello",
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             color: Colors.white,
                           ),
                         ),
                         Text(
                           "$userName",
                           style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 20.sp,
                               color: Colors.white,
+                              fontFamily: "assets/Gilroy-ExtraBold.otf",
                               fontWeight: FontWeight.bold),
                         ),
                       ],

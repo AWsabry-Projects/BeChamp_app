@@ -1,6 +1,7 @@
 import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/Adding%20Goals/addingGoals.dart';
 import 'package:bechamp/views/Personal%20Information/components.dart';
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,7 +31,8 @@ class _PersonalInformationState extends State<PersonalInformation> {
                 "Personal Information",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 55,
+                    fontSize: 55.sp,
+                    fontFamily: "assets/Gilroy-ExtraBold.otf",
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -132,42 +134,32 @@ class _PersonalInformationState extends State<PersonalInformation> {
                     ),
                     Padding(
                       padding: EdgeInsets.all(36.w),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            "Gender",
-                            style: Theme.of(context).textTheme.displaySmall,
-                          ),
-                          SizedBox(
-                            width: 150,
-                            child: DropdownButton(
-                                dropdownColor: Colors.grey[900],
-                                value: genderValue,
-                                items: [
-                                  DropdownMenuItem(
-                                    child: Text(
-                                      "Male",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall,
-                                    ),
-                                    value: "Male",
-                                  ),
-                                  DropdownMenuItem(
-                                    child: Text("Female",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displaySmall),
-                                    value: "Female",
-                                  )
-                                ],
-                                onChanged: (gender) {
-                                  setState(() {
-                                    genderValue = gender as String;
-                                  });
-                                }),
-                          ),
+                      child: DropDownTextField(
+                        clearIconProperty: IconProperty(color: Colors.white),
+                        dropDownIconProperty: IconProperty(color: Colors.white),
+                        textStyle: TextStyle(color: Colors.white),
+                        textFieldDecoration: InputDecoration(
+                            labelStyle: TextStyle(color: Colors.grey.shade300),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: BorderSide(
+                                  color: Colors.grey.shade300,
+                                )),
+                            labelText: "Gender",
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: BorderSide(
+                                  color: Colors.grey.shade300,
+                                )),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: BorderSide(
+                                  color: Colors.grey.shade300,
+                                )),
+                            floatingLabelStyle: TextStyle(color: Colors.white)),
+                        dropDownList: [
+                          DropDownValueModel(name: "Male", value: "Male"),
+                          DropDownValueModel(name: "Female", value: "Female")
                         ],
                       ),
                     ),
@@ -177,7 +169,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           SizedBox(
-                              height: 50,
+                              height: 50.h,
                               child: BeChampButton(
                                   onPressed: () {
                                     goTo(context, AddingGoals());
@@ -186,7 +178,9 @@ class _PersonalInformationState extends State<PersonalInformation> {
                                     "Next >",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 20,
+                                        fontSize: 20.sp,
+                                        fontFamily:
+                                            "assets/Gilroy-ExtraBold.otf",
                                         fontWeight: FontWeight.bold),
                                   ))),
                         ],

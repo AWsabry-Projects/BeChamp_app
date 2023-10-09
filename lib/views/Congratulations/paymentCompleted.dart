@@ -42,7 +42,7 @@ class PaymentCongratulations extends StatelessWidget {
                     "Congratulations !",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 45,
+                        fontSize: 45.sp,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
@@ -50,7 +50,7 @@ class PaymentCongratulations extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontFamily: "bechampFont",
                     ),
                   ),
@@ -71,7 +71,7 @@ class PaymentCongratulations extends StatelessWidget {
                                     Shadow(color: Colors.black, blurRadius: 10)
                                   ],
                                   color: Colors.white,
-                                  fontSize: 25,
+                                  fontSize: 25.sp,
                                   fontWeight: FontWeight.bold),
                             ))),
                   ),

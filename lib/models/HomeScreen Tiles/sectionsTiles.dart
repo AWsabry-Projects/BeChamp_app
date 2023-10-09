@@ -19,7 +19,8 @@ class SectionTile extends StatelessWidget {
               "$title",
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 25,
+                  fontSize: 30.sp,
+                  fontFamily: "assets/Gilroy-ExtraBold.otf",
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -27,7 +28,7 @@ class SectionTile extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(20.r),
           image: DecorationImage(image: AssetImage("${this.imagePath}"))),
     );
   }

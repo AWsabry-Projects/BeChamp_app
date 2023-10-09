@@ -23,34 +23,38 @@ class VerifyPhone extends StatelessWidget {
                 "Phone Verification\n",
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                    fontFamily: 'assets/Gilory-ExtraBold.otf',
                     color: Colors.white,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold),
+                    fontSize: 40.sp,
+                    fontWeight: FontWeight.w800),
               ),
               Text("We sent a code to your number $phone",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white, fontSize: 15)),
+                  style: TextStyle(color: Colors.white, fontSize: 15.sp)),
               TextButton(
                   onPressed: () => Navigator.pop(context),
                   child: Text(
-                    "Change phone",
+                    "Change",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 15,
+                        fontSize: 15.sp,
                         decoration: TextDecoration.underline),
                   )),
               SizedBox(
-                height: 40,
+                height: 40.h,
               ),
               OtpPinField(
                 onSubmit: onSubmittingCode(context),
                 onChange: (code) {},
                 maxLength: numberOfFields,
+                fieldHeight: 118.h,
+                fieldWidth: 83.w,
                 otpPinFieldStyle: OtpPinFieldStyle(
-                    textStyle: TextStyle(color: Colors.white, fontSize: 30),
-                    defaultFieldBorderColor: Colors.grey.shade700,
-                    activeFieldBorderColor: Colors.grey,
-                    fieldPadding: 5),
+                    fieldBorderRadius: 20.r,
+                    textStyle: TextStyle(color: Colors.white, fontSize: 30.sp),
+                    defaultFieldBorderColor: Color(0XFF707070),
+                    activeFieldBorderColor: Color(0xFFA1A1A1),
+                    fieldPadding: 7.w),
                 otpPinFieldDecoration:
                     OtpPinFieldDecoration.defaultPinBoxDecoration,
               ),

@@ -53,11 +53,12 @@ class DayWorkouts extends StatelessWidget {
                     SizedBox(height: 69.h),
                     Text(
                       isEnglish ? "Exercise\n" : "تمرين\n",
-                      style: TextStyle(color: Colors.white, fontSize: 30),
+                      style: TextStyle(color: Colors.white, fontSize: 30.sp),
                     ),
                     Text(
                       isEnglish ? "$description\n" : "$arabicDescription\n",
-                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                      style:
+                          TextStyle(color: Color(0xFFAEAEAE), fontSize: 12.sp),
                     ),
                     SizedBox(height: 18.1.h),
                     Container(
@@ -65,7 +66,7 @@ class DayWorkouts extends StatelessWidget {
                       width: 340.w,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(20)),
+                          borderRadius: BorderRadius.circular(20.r)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,13 +77,13 @@ class DayWorkouts extends StatelessWidget {
                               Text(
                                 isEnglish ? "Day" : "اليوم",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 15.sp),
                               ),
                               Text(
                                 "$day",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 15),
+                                    fontSize: 15.sp),
                               )
                             ],
                           ),
@@ -97,13 +98,13 @@ class DayWorkouts extends StatelessWidget {
                               Text(
                                 isEnglish ? "Week" : "الأسبوع",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 15.sp),
                               ),
                               Text(
                                 "$week",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 15),
+                                    fontSize: 15.sp),
                               )
                             ],
                           ),
@@ -118,7 +119,7 @@ class DayWorkouts extends StatelessWidget {
                               Text(
                                 isEnglish ? "Muscle" : "العضله",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
+                                    color: Colors.white, fontSize: 15.sp),
                               ),
                               Text(
                                 isEnglish
@@ -126,7 +127,7 @@ class DayWorkouts extends StatelessWidget {
                                     : "${this.arabicExerciseName}",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 15),
+                                    fontSize: 15.sp),
                               ),
                             ],
                           )

@@ -81,13 +81,13 @@ class Exercise extends StatelessWidget {
                                       "Sets",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 15,
+                                          fontSize: 15.sp,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
                                       "$sets",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                          color: Colors.white, fontSize: 15.sp),
                                     )
                                   ],
                                 ),
@@ -104,19 +104,19 @@ class Exercise extends StatelessWidget {
                                       "Reps",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 15,
+                                          fontSize: 15.sp,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
                                       "$reps",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                          color: Colors.white, fontSize: 15.sp),
                                     )
                                   ],
                                 ),
                                 Container(
                                   width: 1,
-                                  height: 30,
+                                  height: 30.h,
                                   color: Colors.grey,
                                 ),
                                 Column(
@@ -127,19 +127,19 @@ class Exercise extends StatelessWidget {
                                       "Rest",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 15,
+                                          fontSize: 15.sp,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
                                       "$rest s",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                          color: Colors.white, fontSize: 15.sp),
                                     )
                                   ],
                                 ),
                                 Container(
                                   width: 1,
-                                  height: 30,
+                                  height: 30.h,
                                   color: Colors.grey,
                                 ),
                                 Column(
@@ -150,13 +150,13 @@ class Exercise extends StatelessWidget {
                                       "Muscle",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 15,
+                                          fontSize: 15.sp,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
                                       "${this.muscleName}",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 15),
+                                          color: Colors.white, fontSize: 15.sp),
                                     ),
                                   ],
                                 )
@@ -170,15 +170,15 @@ class Exercise extends StatelessWidget {
                             "$exerciseName",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 46,
+                                fontSize: 46.sp,
                                 fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
                             height: 30.h,
                           ),
                           CircularCountDownTimer(
-                              textStyle:
-                                  TextStyle(color: Colors.white, fontSize: 40),
+                              textStyle: TextStyle(
+                                  color: Colors.white, fontSize: 40.sp),
                               strokeWidth: 20,
                               controller: cdc,
                               autoStart: false,
@@ -189,7 +189,8 @@ class Exercise extends StatelessWidget {
                               ringColor: Theme.of(context).primaryColor),
                           Text(
                             "\nDay $day, Week $week",
-                            style: TextStyle(color: Colors.white, fontSize: 23),
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 23.sp),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -214,7 +215,7 @@ class Exercise extends StatelessWidget {
                                 child: Text(
                                   "Next",
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 20),
+                                      color: Colors.black, fontSize: 20.sp),
                                 ),
                                 onPressed: () {},
                               )

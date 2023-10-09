@@ -1,6 +1,7 @@
 import 'package:bechamp/shared/shared.dart';
 import 'package:bechamp/views/Adding%20Self%20Photos/components.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddSelfPhotos extends StatefulWidget {
@@ -56,7 +57,7 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                                 Text(
                                   "Upload your photo here",
                                   style: TextStyle(
-                                      fontSize: 10,
+                                      fontSize: 10.sp,
                                       color: Color.fromRGBO(112, 112, 112, 1)),
                                 )
                               ],
@@ -73,7 +74,7 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                                 Text(
                                   "File name:\n${image!.name}",
                                   style: TextStyle(
-                                      fontSize: 10,
+                                      fontSize: 10.sp,
                                       color: Color.fromRGBO(117, 117, 117, 1)),
                                 )
                               ],
@@ -98,7 +99,7 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                           "Upload your photo",
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: 20.sp,
                               fontWeight: FontWeight.bold),
                         )),
                   ),
@@ -107,7 +108,7 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                   ),
                   Text(
                     "Notes",
-                    style: TextStyle(fontSize: 30, color: Colors.white),
+                    style: TextStyle(fontSize: 30.sp, color: Colors.white),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 80,
@@ -120,19 +121,19 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Colors.grey.shade500, width: 0.5),
-                            borderRadius: BorderRadius.circular(30)),
+                            borderRadius: BorderRadius.circular(30.r)),
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Colors.grey.shade500, width: 0.5),
-                            borderRadius: BorderRadius.circular(30)),
+                            borderRadius: BorderRadius.circular(30.r)),
                         disabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Colors.grey.shade500, width: 0.5),
-                            borderRadius: BorderRadius.circular(30)),
+                            borderRadius: BorderRadius.circular(30.r)),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Colors.grey.shade500, width: 0.5),
-                            borderRadius: BorderRadius.circular(30)),
+                            borderRadius: BorderRadius.circular(30.r)),
                         hintText: "Type your notes here ...",
                         hintStyle:
                             TextStyle(color: Color.fromRGBO(117, 117, 117, 1)),
@@ -150,7 +151,7 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                         child: Text("Send",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 20,
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.bold))),
                   ),
                 ],

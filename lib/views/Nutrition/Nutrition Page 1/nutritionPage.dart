@@ -4,13 +4,13 @@ import 'package:bechamp/models/WeeksOrDays/components.dart';
 import 'package:bechamp/models/WeeksOrDays/weekOrDay.dart';
 import 'package:bechamp/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NutritionScreen extends StatelessWidget {
   const NutritionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    isExpanded = false;
     return Directionality(
       textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
       child: Scaffold(
@@ -29,14 +29,14 @@ class NutritionScreen extends StatelessWidget {
                         Text(
                           "Hello",
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             color: Colors.white,
                           ),
                         ),
                         Text(
                           "$userName",
                           style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 20.sp,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),
@@ -52,6 +52,7 @@ class NutritionScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     WeekOrDayTile(
+                      isExpanded: false,
                       contentDays: [
                         DaysTile(onTap: () {}),
                         DaysTile(onTap: () {})
@@ -72,6 +73,7 @@ class NutritionScreen extends StatelessWidget {
                       isCompleted: false,
                     ),
                     WeekOrDayTile(
+                      isExpanded: false,
                       contentDays: [
                         DaysTile(onTap: () {}),
                         DaysTile(onTap: () {})
@@ -85,6 +87,8 @@ class NutritionScreen extends StatelessWidget {
                       isCompleted: false,
                     ),
                     WeekOrDayTile(
+                      isExpanded: false,
+
                       contentDays: [
                         DaysTile(onTap: () {}),
                         DaysTile(onTap: () {})
@@ -98,6 +102,8 @@ class NutritionScreen extends StatelessWidget {
                       isCompleted: false,
                     ),
                     WeekOrDayTile(
+                      isExpanded: false,
+
                       contentDays: [
                         DaysTile(onTap: () {}),
                         DaysTile(onTap: () {})

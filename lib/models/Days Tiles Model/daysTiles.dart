@@ -1,6 +1,7 @@
 import 'package:bechamp/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class DaysTile extends StatelessWidget {
   final void Function() onTap;
@@ -23,7 +24,7 @@ class DaysTile extends StatelessWidget {
         textDirection: isEnglish ? TextDirection.ltr : TextDirection.rtl,
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10.r),
               color: isFinished
                   ? Theme.of(context).primaryColor
                   : Color.fromRGBO(42, 42, 42, 1)),
@@ -51,25 +52,60 @@ class DaysTile extends StatelessWidget {
                     Text(
                       "$title",
                       style: isFinished
-                          ? TextStyle(color: Colors.black, fontSize: 20)
-                          : Theme.of(context).textTheme.displaySmall,
+                          ? TextStyle(
+                              fontFamily: "assets/Gilroy-ExtraBold.otf",
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black)
+                          : TextStyle(
+                              fontFamily: "assets/Gilroy-ExtraBold.otf",
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                     ),
                   ],
                 ),
                 Row(
                   children: [
                     isFinished
+                        ? Text(
+                            "5 min",
+                            style: TextStyle(
+                                fontSize: 10.sp,
+                                color: Color.fromRGBO(4, 4, 4, 1)),
+                          )
+                        : Text(
+                            "5 min",
+                            style: TextStyle(
+                                fontSize: 10.sp,
+                                color: Color.fromRGBO(255, 255, 255, 1)),
+                          ),
+                    SizedBox(
+                      width: 19.w,
+                    ),
+                    isFinished
                         ? SizedBox(
-                            width: MediaQuery.of(context).size.width / 10,
-                            height: MediaQuery.of(context).size.height / 10,
-                            child: Image.asset(
-                              "assets/done.png",
+                            width: 17.w,
+                            height: 17.h,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor:
+                                      Color.fromRGBO(119, 255, 0, 1),
+                                ),
+                                SvgPicture.asset(
+                                  "assets/check-circle-Regular_1_.svg",
+                                  width: 10.55.w,
+                                  height: 7.22.h,
+                                ),
+                              ],
                             ),
                           )
                         : Icon(
                             Icons.circle_outlined,
-                            color: Colors.grey,
-                            size: 15,
+                            color: Color(0xFF707070),
+                            size: 16.h,
                           ),
                     SizedBox(
                       width: 13.h,

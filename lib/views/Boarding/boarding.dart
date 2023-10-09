@@ -48,7 +48,8 @@ class Boarding extends StatelessWidget {
                         "Welcome to Fitness App\n",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 24,
+                            fontSize: 30.sp,
+                            fontFamily: "assets/Gilroy-ExtraBold.otf",
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
@@ -56,7 +57,7 @@ class Boarding extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 17,
+                          fontSize: 17.sp,
                           fontFamily: "bechampFont",
                         ),
                       ),
@@ -75,7 +76,8 @@ class Boarding extends StatelessWidget {
                                 child: Text(
                                   "Get Started.",
                                   style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 20.sp,
+                                      fontFamily: "assets/Gilroy-ExtraBold.otf",
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
                                 ))),
@@ -120,7 +122,8 @@ class Boarding extends StatelessWidget {
                         "Customized Workouts\n",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 24,
+                            fontSize: 30.sp,
+                            fontFamily: "assets/Gilroy-ExtraBold.otf",
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
@@ -128,7 +131,7 @@ class Boarding extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 17,
+                          fontSize: 17.sp,
                           fontFamily: "bechampFont",
                         ),
                       ),
@@ -147,7 +150,8 @@ class Boarding extends StatelessWidget {
                                 child: Text(
                                   "Get Started.",
                                   style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 20.sp,
+                                      fontFamily: "assets/Gilroy-ExtraBold.otf",
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
                                 ))),
@@ -192,7 +196,8 @@ class Boarding extends StatelessWidget {
                         "Customized Nutrition plan\n",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 24,
+                            fontSize: 30.sp,
+                            fontFamily: "assets/Gilroy-ExtraBold.otf",
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
@@ -200,7 +205,7 @@ class Boarding extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 17,
+                          fontSize: 17.sp,
                           fontFamily: "bechampFont",
                         ),
                       ),
@@ -219,7 +224,8 @@ class Boarding extends StatelessWidget {
                                 child: Text(
                                   "Get Started.",
                                   style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 20.sp,
+                                      fontFamily: "assets/Gilroy-ExtraBold.otf",
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
                                 ))),

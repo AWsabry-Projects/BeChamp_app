@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:bechamp/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DayNutrition extends StatelessWidget {
   final int? day;
@@ -52,7 +53,7 @@ class DayNutrition extends StatelessWidget {
                 ),
                 Text(
                   isEnglish ? "\t  Meal $day" : "\t  الوجبة $day",
-                  style: const TextStyle(fontSize: 65, color: Colors.white),
+                  style: TextStyle(fontSize: 65.sp, color: Colors.white),
                 ),
                 Container(
                     clipBehavior: Clip.antiAlias,

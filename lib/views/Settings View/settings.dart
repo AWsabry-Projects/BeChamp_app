@@ -146,7 +146,7 @@ class _SettingsState extends State<Settings> {
                           userName,
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 30,
+                              fontSize: 30.sp,
                               fontWeight: FontWeight.bold),
                         )
                       ],

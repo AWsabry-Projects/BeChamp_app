@@ -23,7 +23,8 @@ class SignUp extends StatelessWidget {
               "Sign Up\n",
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 50,
+                  fontSize: 50.sp,
+                  fontFamily: "assets/Gilroy-ExtraBold.otf",
                   fontWeight: FontWeight.bold),
             )),
             SizedBox(
@@ -165,7 +166,8 @@ class SignUp extends StatelessWidget {
                                 "Sign Up",
                                 style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 23,
+                                    fontSize: 23.sp,
+                                    fontFamily: "assets/Gilroy-ExtraBold.otf",
                                     fontWeight: FontWeight.bold),
                               ))),
                     )

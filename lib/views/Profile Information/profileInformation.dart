@@ -1,5 +1,6 @@
 import 'package:bechamp/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileInformation extends StatelessWidget {
   const ProfileInformation({super.key});
@@ -42,7 +43,7 @@ class ProfileInformation extends StatelessWidget {
                                 Text(
                                   "     Name",
                                   style: TextStyle(
-                                      fontSize: 15, color: Colors.white),
+                                      fontSize: 15.sp, color: Colors.white),
                                 ),
                                 Container(
                                   width: double.maxFinite,
@@ -50,7 +51,7 @@ class ProfileInformation extends StatelessWidget {
                                       child: Text(
                                     userName,
                                     style: TextStyle(
-                                        fontSize: 17,
+                                        fontSize: 17.sp,
                                         color:
                                             Color.fromRGBO(110, 110, 110, 1)),
                                   )),
@@ -72,7 +73,7 @@ class ProfileInformation extends StatelessWidget {
                                 Text(
                                   "     E-Mail",
                                   style: TextStyle(
-                                      fontSize: 15, color: Colors.white),
+                                      fontSize: 15.sp, color: Colors.white),
                                 ),
                                 Container(
                                   width: double.maxFinite,
@@ -80,7 +81,7 @@ class ProfileInformation extends StatelessWidget {
                                       child: Text(
                                     userEmail,
                                     style: TextStyle(
-                                        fontSize: 17,
+                                        fontSize: 17.sp,
                                         color:
                                             Color.fromRGBO(110, 110, 110, 1)),
                                   )),
@@ -102,7 +103,7 @@ class ProfileInformation extends StatelessWidget {
                                 Text(
                                   "     Phone no.",
                                   style: TextStyle(
-                                      fontSize: 15, color: Colors.white),
+                                      fontSize: 15.sp, color: Colors.white),
                                 ),
                                 Container(
                                   width: double.maxFinite,
@@ -110,7 +111,7 @@ class ProfileInformation extends StatelessWidget {
                                       child: Text(
                                     phoneNumber,
                                     style: TextStyle(
-                                        fontSize: 17,
+                                        fontSize: 17.sp,
                                         color:
                                             Color.fromRGBO(110, 110, 110, 1)),
                                   )),
