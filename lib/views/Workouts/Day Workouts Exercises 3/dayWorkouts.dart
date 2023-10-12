@@ -77,19 +77,22 @@ class DayWorkouts extends StatelessWidget {
                               Text(
                                 isEnglish ? "Day" : "اليوم",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 15.sp),
+                                  color: Colors.white,
+                                  fontSize: 15.sp,
+                                ),
                               ),
                               Text(
                                 "$day",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 15.sp),
+                                    fontSize: 15.sp,
+                                    fontFamily: "assets/Gilroy-ExtraBold.otf"),
                               )
                             ],
                           ),
                           Container(
-                            width: 1,
-                            height: 30,
+                            width: 1.w,
+                            height: 25.h,
                             color: Colors.grey,
                           ),
                           Column(
@@ -104,16 +107,18 @@ class DayWorkouts extends StatelessWidget {
                                 "$week",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 15.sp),
+                                    fontSize: 15.sp,
+                                    fontFamily: "assets/Gilroy-ExtraBold.otf"),
                               )
                             ],
                           ),
                           Container(
-                            width: 1,
-                            height: 30,
+                            width: 1.w,
+                            height: 25.h,
                             color: Colors.grey,
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text(
@@ -127,7 +132,8 @@ class DayWorkouts extends StatelessWidget {
                                     : "${this.arabicExerciseName}",
                                 style: TextStyle(
                                     color: Theme.of(context).primaryColor,
-                                    fontSize: 15.sp),
+                                    fontSize: 15.sp,
+                                    fontFamily: "assets/Gilroy-ExtraBold.otf"),
                               ),
                             ],
                           )
@@ -135,12 +141,14 @@ class DayWorkouts extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 30,
+                      height: 35.h,
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height / 2,
+                      width: double.maxFinite,
+                      height: 430.h,
                       child: SingleChildScrollView(
                           child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           ExerciseTile(
                             onTap: () {
@@ -198,6 +206,25 @@ class DayWorkouts extends StatelessWidget {
                           )
                         ],
                       )),
+                    ),
+                    SizedBox(
+                      width: 321.w,
+                      height: 50.h,
+                      child: BeChampButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Start the workout",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "assets/Gilroy-ExtraBold.otf",
+                                fontSize: 23.sp,
+                                fontWeight: FontWeight.bold,
+                                shadows: [
+                                  Shadow(
+                                      color: Colors.grey.shade700,
+                                      blurRadius: 40.r)
+                                ]),
+                          )),
                     )
                   ],
                 ),

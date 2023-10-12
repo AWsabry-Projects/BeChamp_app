@@ -81,6 +81,8 @@ class Exercise extends StatelessWidget {
                                       "Sets",
                                       style: TextStyle(
                                           color: Colors.white,
+                                          fontFamily:
+                                              "assets/Gilroy-ExtraBold.otf",
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -103,6 +105,8 @@ class Exercise extends StatelessWidget {
                                     Text(
                                       "Reps",
                                       style: TextStyle(
+                                          fontFamily:
+                                              "assets/Gilroy-ExtraBold.otf",
                                           color: Colors.white,
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.bold),
@@ -127,6 +131,8 @@ class Exercise extends StatelessWidget {
                                       "Rest",
                                       style: TextStyle(
                                           color: Colors.white,
+                                          fontFamily:
+                                              "assets/Gilroy-ExtraBold.otf",
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -170,6 +176,7 @@ class Exercise extends StatelessWidget {
                             "$exerciseName",
                             style: TextStyle(
                                 color: Colors.white,
+                                fontFamily: "assets/Gilroy-ExtraBold.otf",
                                 fontSize: 46.sp,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -178,7 +185,9 @@ class Exercise extends StatelessWidget {
                           ),
                           CircularCountDownTimer(
                               textStyle: TextStyle(
-                                  color: Colors.white, fontSize: 40.sp),
+                                  color: Colors.white,
+                                  fontSize: 40.sp,
+                                  fontFamily: "assets/Gilroy-ExtraBold.otf"),
                               strokeWidth: 20,
                               controller: cdc,
                               autoStart: false,
@@ -205,19 +214,28 @@ class Exercise extends StatelessWidget {
                                       ),
                                       Text(
                                         "Back",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displaySmall,
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17.sp,
+                                            fontFamily:
+                                                "assets/Gilroy-ExtraBold.otf"),
                                       ),
                                     ],
                                   )),
-                              BeChampButton(
-                                child: Text(
-                                  "Next",
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 20.sp),
+                              SizedBox(
+                                width: 117.w,
+                                height: 59.h,
+                                child: BeChampButton(
+                                  child: Text(
+                                    "Next",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 17.sp,
+                                        fontFamily:
+                                            "assets/Gilroy-ExtraBold.otf"),
+                                  ),
+                                  onPressed: () {},
                                 ),
-                                onPressed: () {},
                               )
                             ],
                           )

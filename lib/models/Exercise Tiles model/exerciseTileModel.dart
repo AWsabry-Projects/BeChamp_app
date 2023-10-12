@@ -40,6 +40,7 @@ class ExerciseTile extends StatelessWidget {
                           "$title",
                           style: TextStyle(
                               fontSize: 23.sp,
+                              fontFamily: "assets/Gilroy-ExtraBold.otf",
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
                         ),

@@ -53,9 +53,12 @@ class _SettingsState extends State<Settings> {
                                     isEnglish
                                         ? "Profile information"
                                         : "معلومات شخصية",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .displaySmall,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 25.sp,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily:
+                                            "assets/Gilroy-ExtraBold.otf"),
                                   ),
                                   Icon(
                                     Icons.arrow_forward_ios_outlined,
@@ -79,13 +82,19 @@ class _SettingsState extends State<Settings> {
                                       isEnglish
                                           ? "Change Language"
                                           : "تغيير اللغه",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall),
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 25.sp,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily:
+                                              "assets/Gilroy-ExtraBold.otf")),
                                   Text(isEnglish ? "English" : "العربيه",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall)
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 25.sp,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily:
+                                              "assets/Gilroy-ExtraBold.otf"))
                                 ])),
                       ),
                       Padding(
@@ -99,9 +108,12 @@ class _SettingsState extends State<Settings> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(isEnglish ? "Contact Us" : "تواصل معنا",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall),
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 25.sp,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily:
+                                              "assets/Gilroy-ExtraBold.otf")),
                                   Icon(
                                     Icons.arrow_forward_ios_outlined,
                                     color: Colors.white,
@@ -117,7 +129,7 @@ class _SettingsState extends State<Settings> {
                       children: [
                         SizedBox(
                           child: CircleAvatar(
-                            radius: 70.0,
+                            radius: 70.0.r,
                             backgroundColor: Colors.white,
                             child: InkWell(
                               onTap: () {},
@@ -134,7 +146,7 @@ class _SettingsState extends State<Settings> {
                                     ),
                                   ),
                                 ),
-                                radius: 70.0,
+                                radius: 70.0.r,
                               ),
                             ),
                           ),
@@ -146,6 +158,7 @@ class _SettingsState extends State<Settings> {
                           userName,
                           style: TextStyle(
                               color: Colors.white,
+                              fontFamily: "assets/Gilroy-ExtraBold.otf",
                               fontSize: 30.sp,
                               fontWeight: FontWeight.bold),
                         )

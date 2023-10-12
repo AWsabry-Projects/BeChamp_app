@@ -202,7 +202,7 @@ class _WeekOrDayTileState extends State<WeekOrDayTile> {
                 widget.isCompleted as bool
                     ? Container(
                         width: double.infinity,
-                        height: 158.h,
+                        height: 173.h,
                         decoration: BoxDecoration(
                             color: Colors.grey.shade900.withOpacity(0.9),
                             borderRadius: BorderRadius.circular(30.r)),

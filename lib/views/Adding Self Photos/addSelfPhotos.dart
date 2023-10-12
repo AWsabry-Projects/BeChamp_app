@@ -25,9 +25,24 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Hello,\n$userName",
-                    style: Theme.of(context).textTheme.displaySmall,
+                  Column(
+                    children: [
+                      Text(
+                        "Hello",
+                        style: TextStyle(
+                          fontSize: 20.sp,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "$userName",
+                        style: TextStyle(
+                            fontSize: 20.sp,
+                            color: Colors.white,
+                            fontFamily: "assets/Gilroy-ExtraBold.otf",
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                   CircleAvatar()
                 ],
@@ -98,6 +113,7 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                         child: Text(
                           "Upload your photo",
                           style: TextStyle(
+                              fontFamily: "assets/Gilroy-ExtraBold.otf",
                               color: Colors.black,
                               fontSize: 20.sp,
                               fontWeight: FontWeight.bold),
@@ -108,7 +124,12 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                   ),
                   Text(
                     "Notes",
-                    style: TextStyle(fontSize: 30.sp, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 30.sp,
+                      color: Colors.white,
+                      fontFamily: "assets/Gilroy-ExtraBold.otf",
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 80,
@@ -150,6 +171,7 @@ class _AddSelfPhotosState extends State<AddSelfPhotos> {
                         onPressed: onTapOnSend,
                         child: Text("Send",
                             style: TextStyle(
+                                fontFamily: "assets/Gilroy-ExtraBold.otf",
                                 color: Colors.black,
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.bold))),

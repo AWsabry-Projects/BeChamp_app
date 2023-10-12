@@ -36,9 +36,11 @@ class NutritionScreen extends StatelessWidget {
                         Text(
                           "$userName",
                           style: TextStyle(
-                              fontSize: 20.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
+                            fontSize: 20.sp,
+                            color: Colors.white,
+                            fontFamily: "assets/Gilroy-ExtraBold.otf",
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
