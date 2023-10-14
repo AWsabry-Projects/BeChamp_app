@@ -8,12 +8,14 @@ class DaysTile extends StatelessWidget {
   bool canAccessNow,
       isFinished; // if isFinished is true canAccessNow has no effect
   final String? title;
+  final bool? isNutrition;
   DaysTile(
       {super.key,
       required this.onTap,
       this.title,
       this.canAccessNow = false,
-      this.isFinished = false});
+      this.isFinished = false,
+      this.isNutrition = false});
 
   @override
   Widget build(BuildContext context) {
@@ -67,19 +69,21 @@ class DaysTile extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    isFinished
-                        ? Text(
-                            "5 min",
-                            style: TextStyle(
-                                fontSize: 10.sp,
-                                color: Color.fromRGBO(4, 4, 4, 1)),
-                          )
-                        : Text(
-                            "5 min",
-                            style: TextStyle(
-                                fontSize: 10.sp,
-                                color: Color.fromRGBO(255, 255, 255, 1)),
-                          ),
+                    isNutrition as bool
+                        ? SizedBox()
+                        : isFinished
+                            ? Text(
+                                "5 min",
+                                style: TextStyle(
+                                    fontSize: 10.sp,
+                                    color: Color.fromRGBO(4, 4, 4, 1)),
+                              )
+                            : Text(
+                                "5 min",
+                                style: TextStyle(
+                                    fontSize: 10.sp,
+                                    color: Color.fromRGBO(255, 255, 255, 1)),
+                              ),
                     SizedBox(
                       width: 19.w,
                     ),

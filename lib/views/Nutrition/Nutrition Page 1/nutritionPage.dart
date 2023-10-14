@@ -56,8 +56,89 @@ class NutritionScreen extends StatelessWidget {
                     WeekOrDayTile(
                       isExpanded: false,
                       contentDays: [
-                        DaysTile(onTap: () {}),
-                        DaysTile(onTap: () {})
+                        DaysTile(
+                          isFinished: true,
+                          canAccessNow: true,
+                          isNutrition: true,
+                          onTap: () {
+                            goTo(
+                                context,
+                                DayNutrition(
+                                  day: 1,
+                                  mealDetails: [
+                                    "200gms Fava Beans",
+                                    " 4 eggs ",
+                                    "2 loafs of bread"
+                                  ],
+                                ));
+                          },
+                          title: "Meal 1",
+                        ),
+                        DaysTile(
+                          canAccessNow: true,
+                          onTap: () {
+                            goTo(
+                                context,
+                                DayNutrition(
+                                  day: 2,
+                                  mealDetails: [
+                                    "200gms Fava Beans",
+                                    " 4 eggs ",
+                                    "2 loafs of bread"
+                                  ],
+                                ));
+                          },
+                          title: "Meal 2",
+                          isNutrition: true,
+                        ),
+                        DaysTile(
+                          onTap: () {
+                            goTo(
+                                context,
+                                DayNutrition(
+                                  day: 3,
+                                  mealDetails: [
+                                    "200gms Fava Beans",
+                                    " 4 eggs ",
+                                    "2 loafs of bread"
+                                  ],
+                                ));
+                          },
+                          title: "Meal 3",
+                          isNutrition: true,
+                        ),
+                        DaysTile(
+                          onTap: () {
+                            goTo(
+                                context,
+                                DayNutrition(
+                                  day: 4,
+                                  mealDetails: [
+                                    "200gms Fava Beans",
+                                    " 4 eggs ",
+                                    "2 loafs of bread"
+                                  ],
+                                ));
+                          },
+                          title: "Meal 4",
+                          isNutrition: true,
+                        ),
+                        DaysTile(
+                          onTap: () {
+                            goTo(
+                                context,
+                                DayNutrition(
+                                  day: 5,
+                                  mealDetails: [
+                                    "200gms Fava Beans",
+                                    " 4 eggs ",
+                                    "2 loafs of bread"
+                                  ],
+                                ));
+                          },
+                          title: "Meal 5",
+                          isNutrition: true,
+                        )
                       ],
 
                       isAccessed: true,

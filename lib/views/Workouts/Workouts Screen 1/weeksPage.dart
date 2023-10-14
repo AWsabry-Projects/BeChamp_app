@@ -51,7 +51,6 @@ class WeeksScreen extends StatelessWidget {
                 children: [
                   WeekOrDayTile(
                     isExpanded: false,
-
                     contentDays: [
                       DaysTile(
                         onTap: () {},
@@ -76,22 +75,14 @@ class WeeksScreen extends StatelessWidget {
                       )
                     ],
                     isCompleted: true,
-                    isAccessed: !false,
+                    isAccessed: false,
                     isWeek: true,
                     image: "assets/week_1.png",
                     title: "Week 1",
                     description: "dgfyefue oeiry eiruy kj",
-                    // onTap: () {
-                    //   goTo(
-                    //       context,
-                    //       const WorkoutsDays(
-                    //         week: 1,
-                    //       ));
-                    // },
                   ),
                   WeekOrDayTile(
                     isExpanded: false,
-
                     contentDays: [
                       DaysTile(
                           canAccessNow: true,
@@ -106,19 +97,19 @@ class WeeksScreen extends StatelessWidget {
                                   description: "04 workout weeks for beginner",
                                 ));
                           }),
-                      DaysTile(onTap: () {}),
-                      DaysTile(onTap: () {}),
-                      DaysTile(onTap: () {}),
-                      DaysTile(onTap: () {})
+                      DaysTile(
+                        onTap: () {},
+                        title: "Day 2",
+                      ),
+                      DaysTile(onTap: () {}, title: "Day 3"),
+                      DaysTile(onTap: () {}, title: "Day 4"),
+                      DaysTile(onTap: () {}, title: "Day 5")
                     ],
                     isAccessed: true,
                     isWeek: true,
                     image: "assets/week2.png",
                     title: "Week 2",
                     description: "04 workout weeks for beginner",
-                    // onTap: () {
-
-                    // },
                     isCompleted: !true,
                   ),
                   WeekOrDayTile(

@@ -34,7 +34,7 @@ class DayNutrition extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
+                  padding: EdgeInsets.only(top: 30.h, left: 30.w, right: 30.w),
                   child: IconButton(
                       onPressed: () {
                         Navigator.pop(context);
@@ -43,28 +43,31 @@ class DayNutrition extends StatelessWidget {
                           ? Icon(
                               Icons.arrow_circle_left_rounded,
                               color: Colors.white,
-                              size: 30,
+                              size: 41.w,
                             )
                           : Icon(
                               Icons.arrow_circle_right_rounded,
                               color: Colors.white,
-                              size: 30,
+                              size: 41.w,
                             )),
                 ),
                 Text(
-                  isEnglish ? "\t  Meal $day" : "\t  الوجبة $day",
-                  style: TextStyle(fontSize: 65.sp, color: Colors.white),
+                  isEnglish ? "\t Meal $day" : "\t الوجبة $day",
+                  style: TextStyle(
+                      fontSize: 65.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "assets/Gilroy-ExtraBold.otf"),
                 ),
                 Container(
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
                         borderRadius: isEnglish
-                            ? const BorderRadius.only(
-                                topRight: Radius.circular(40))
-                            : const BorderRadius.only(
-                                topLeft: Radius.circular(40))),
-                    height: MediaQuery.of(context).size.height / 1.4,
-                    width: MediaQuery.of(context).size.width / 1.3,
+                            ? BorderRadius.only(topRight: Radius.circular(40.r))
+                            : BorderRadius.only(
+                                topLeft: Radius.circular(40.r))),
+                    width: 357.w,
+                    height: 678.h,
                     child: ClipRect(
                       child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
@@ -78,9 +81,12 @@ class DayNutrition extends StatelessWidget {
                                 children: [
                                   Text(
                                     isEnglish ? "Details:" : "التفاصيل:",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineMedium,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 30.sp,
+                                        fontFamily:
+                                            "assets/Gilroy-ExtraBold.otf",
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(10.0),
@@ -91,9 +97,9 @@ class DayNutrition extends StatelessWidget {
                                           mealDetails!.length,
                                           (index) => Text(
                                               "${mealDetails![index]}",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .displaySmall)),
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 20.sp))),
                                     ),
                                   ),
                                 ],
